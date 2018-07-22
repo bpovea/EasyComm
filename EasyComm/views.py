@@ -7,3 +7,6 @@ def home(request):
 
 def about_us(request):
 	return render(request,'../templates/EasyComm/about_us_g3.html')
+
+def contact_us(request):
+	return render(request,'../templates/EasyComm/contact_us.html')

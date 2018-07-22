@@ -5,11 +5,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-center">
-            <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="products.html">Productos</a></li>
             <li class="nav-item"><a class="nav-link" href="partners.html">Socios</a></li>
             <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact_us.html">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contacto</a></li>
             <li class="nav-item"><a class="nav-link" href="validaciones.html">Validaciones</a></li>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             {% if user.is_authenticated %}
@@ -23,11 +23,11 @@
                             <span class="label label-warning">{{ num_unread_notifications }}</span>
                         </a>
                     {% else %}
-                        <a href="{% url 'customer:summary' %}"><i class="icon-user"></i> {% trans "Account" %}</a>
+                        <a class="nav-link" href="{% url 'customer:summary' %}"><i class="icon-user"></i> {% trans "Account" %}</a>
                     {% endif %}
-                </li class="nav-item">
+                </li >
                 {% if user.is_staff or perms.partner.dashboard_access %}
-                    <li><a class="nav-link" href="{% url 'dashboard:index' %}"><i class="icon-list-ul"></i> {% trans "Dashboard" %}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:index' %}"><i class="icon-list-ul"></i> {% trans "Dashboard" %}</a></li>
                 {% endif %}
                 <li class="nav-item"><a class="nav-link" id="logout_link" href="{% url 'customer:logout' %}"><i class="icon-signout"></i> {% trans "Logout" %}</a></li>
                 {% endblock %}
@@ -61,4 +61,5 @@
     {% endif %}
     {% endblock %}
     </div>
+
 </nav>

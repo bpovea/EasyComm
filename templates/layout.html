@@ -3,12 +3,13 @@
 {% load promotion_tags %}
 
 {% block styles %}
-    
+    <!--
     {% if use_less %}
         <link rel="stylesheet/less" type="text/css" href="{% static "oscar/less/styles.less" %}" />
     {% else %}
         <link rel="stylesheet" type="text/css" href="{% static "oscar/css/styles.css" %}" />
     {% endif %}
+    -->
     <link rel="stylesheet" href="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "oscar/css/datetimepicker.css" %}" />
 
@@ -68,7 +69,7 @@
             </div>
         </div>
     {% endblock %}
-
+    <hr>
     {% include "partials/footer.html" %}
 {% endblock %}
 
@@ -87,7 +88,7 @@
     <script src="{% static 'oscar/js/bootstrap.min.js'  %}"></script>
     <!-- Oscar -->
     <script src="{% static "oscar/js/oscar/ui.js" %}"></script>
-
+    
     <script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js" %}"></script>
     <script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}"></script>
 {% endblock %}

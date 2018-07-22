@@ -1,21 +1,18 @@
-*{
-    font-size: 100%;
-}
 
 .contenedor{
 	margin:2% 5% 2%;
 }
 
-nav,footer{
-    font-size: 135%;
+nav,footer,div.row form{
+    font-size: 115%;
 }
 
 @media (min-width: 700px) { 
-   font-size: 85%;
+   font-size: 80%;
 }
 
 @media (min-width: 500px) { 
-   font-size: 60%;
+   font-size: 55%;
    
 }
 

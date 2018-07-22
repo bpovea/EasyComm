@@ -32,17 +32,10 @@
 		</div>
 		<hr>
 		<!-- footer -->
-		<footer class="footer">
-			<ul class="footer-menu">
-		      <li class="off-1 col-12 col-sm-12 col-md-2"><a href="">FAQs</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a href="">Terms &amp; Conditions</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a  href="{% url 'about_us' %}">Acerca de</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a href="contact_us.html">Contacto</a></li>
-			</ul>
-		  	<div class="footer-copyright text-center">&copy; 2018 Copyright:
-		    	<a href=""> EasyComm.com</a>
-		  	</div>
-		</footer>
+		{% include "partials/footer.html" %}
 		<!-- endfooter-->
+
+		{% block scripts %}
+        {% endblock %}
 	</body>
 </html>

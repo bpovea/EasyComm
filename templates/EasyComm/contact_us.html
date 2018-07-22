@@ -1,141 +1,86 @@
-<!DOCTYPE html>
-<html lang="zxx" >
-	<head>
-		<meta charset="UTF-8">
-		<title> EasyComm </title>
-		<meta name="description" content="">
-		<meta name="keywords" content="">
-		<meta name="author" content="Grupo3&6"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="js/contact-us.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-		<link rel="stylesheet" type="text/css" href="css/main.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
-		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
-		<link rel="stylesheet" type="text/css" href="css/base.css" >
-	</head>
+{% extends "EasyComm/base.html" %}
+{% load staticfiles %}
 
-	<body>
-		<header>
-			<h1>Easycomm</h1>
-		</header>
+{% block title %} 
+	Contáctanos
+{% endblock %}
 
-		<!-- navbar -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
+{% block scripts %}
+	<script src="{% static 'oscar/js/contact-us.js'%}"></script>
+{% endblock %}
 
-		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-	        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-center">
-		    	<li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
-				<li class="nav-item"><a class="nav-link" href="products.html">Productos</a></li>
-				<li class="nav-item"><a class="nav-link" href="partners.html">Socios</a></li>
-				<li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-				<li class="nav-item active"><a class="nav-link" href="contact_us.html">Contacto</a></li>
-				<li class="nav-item"><a class="nav-link" href="validaciones.html">Validaciones</a></li>
-		    </ul>
-		    <form class="form-inline my-2 my-lg-0 nav-form">
-		      <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
-		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-		    </form>
-		  </div>
-		</nav>
-		<!-- end navbar -->
-        <br>
-		<!-- content -->
-
-		<div class="contenedor">
-  			<div class="row ">
-				<div class="col-sm-12 col-md-8 mt-2" >
-					<div class="col-md-12">
-			            <div id="map" style="height: 450px"></div>
-			        </div>
-				</div>
-				<div class="col-sm-12 col-md-4 mt-2" >
-                    <div class="card">
-                        <div class="card-body">
-                        	<br>
-                            <h5 class="card-title">Correo electrónico</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">support@easyComm.com</h6>
-                            <br>
-                            <br>
-                            <h5 class="card-title">Teléfonos</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">0989389265</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">0989389265</h6>
-                            <br>
-                            <br>
-                            <h5 class="card-title">Dirección</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">García Moreno,Guayaquil 090311</h6>
-                            <br>
-                            <br>
-                            <div class="flex-wrap d-flex justify-content-center share">
-	                            <i class="fa fa-facebook-square fa-4x" ></i>
-	                            <i class="fa fa-twitter-square fa-4x"></i>
-	                            <i class="fa fa-google-plus-square fa-4x"></i>
-	                            <i class="fa fa-skype fa-4x"></i>
-	                            <i class="fa fa-linkedin fa-4x"></i>
-	                            <i class="fa fa-whatsapp fa-4x"></i>
-	                        </div>
-                            <br>
-                        </div>
-                    </div>
-			    </div>
-
-				<div class="col-sm-12 col-md-12 mt-2" >
-					<form>
-                        <div class="form-row">
-                            <div class="col-sm-12 col-md-6 form-group">
-                                <label for="inputNombres">Nombres</label>
-                                <input type="text" class="form-control" id="inputNombres" required>
-                            </div>
-                            <div class="col-sm-12 col-md-6 form-group">
-                                <label for="inputApellidos">Apellidos</label>
-                                <input type="text" class="form-control" id="inputApellidos" required>
-                            </div>
-    					    <div class="col-sm-12 col-md-6 form-group">
-    					      <label for="inputCorreo">Correo electrónico</label>
-    					      <input type="email" class="form-control" id="inputCorreo" required>
-    					    </div>
-                            <div class="col-sm-6 col-md-3 form-group">
-                              <label for="inputPais">País</label>
-                              <input type="text" class="form-control" id="inputPais" placeholder="Ecuador" required>
-                            </div>
-                            <div class="col-sm-6 col-md-3 form-group">
-                              <label for="inputCiudad">Ciudad</label>
-                              <input type="text" class="form-control" id="inputCiudad" placeholder="Guayaquil" required>
-                            </div>
-                            <div class="col-sm-12 col-md-12 form-group">
-                              <label for="inputMensaje">Mensaje</label>
-                              <textarea class="form-control" id="inputMensaje" rows="3"></textarea>
-                            </div>
-                        </div>
-                            <div class="row p-2">
-                              <button type="submit" class="col-sm-12 offset-md-3 col-md-6 btn btn-primary">Enviar</button>
-                            </div>
-					</form>
-				</div>
-            </div>
+{% block content %}	
+	<div class="row ">
+		<div class="col-sm-12 col-md-8 mt-2" >
+			<div class="col-md-12">
+	            <div id="map" style="height: 450px"></div>
+	        </div>
 		</div>
+		<div class="col-sm-12 col-md-4 mt-2" >
+            <div class="card">
+                <div class="card-body">
+                	<br>
+                    <h5 class="card-title">Correo electrónico</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">support@easyComm.com</h6>
+                    <br>
+                    <br>
+                    <h5 class="card-title">Teléfonos</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">0989389265</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">0989389265</h6>
+                    <br>
+                    <br>
+                    <h5 class="card-title">Dirección</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">García Moreno,Guayaquil 090311</h6>
+                    <br>
+                    <br>
+                    <div class="flex-wrap d-flex justify-content-center share">
+                        <i class="fa fa-facebook-square fa-4x" ></i>
+                        <i class="fa fa-twitter-square fa-4x"></i>
+                        <i class="fa fa-google-plus-square fa-4x"></i>
+                        <i class="fa fa-skype fa-4x"></i>
+                        <i class="fa fa-linkedin fa-4x"></i>
+                        <i class="fa fa-whatsapp fa-4x"></i>
+                    </div>
+                    <br>
+                </div>
+            </div>
+	    </div>
 
-		<!-- end content -->
+		<div class="col-sm-12 col-md-12 mt-2" >
+			<form>
+                <div class="form-row">
+                    <div class="col-sm-12 col-md-6 form-group">
+                        <label for="inputNombres">Nombres</label>
+                        <input type="text" class="form-control" id="inputNombres" required>
+                    </div>
+                    <div class="col-sm-12 col-md-6 form-group">
+                        <label for="inputApellidos">Apellidos</label>
+                        <input type="text" class="form-control" id="inputApellidos" required>
+                    </div>
+				    <div class="col-sm-12 col-md-6 form-group">
+				      <label for="inputCorreo">Correo electrónico</label>
+				      <input type="email" class="form-control" id="inputCorreo" required>
+				    </div>
+                    <div class="col-sm-6 col-md-3 form-group">
+                      <label for="inputPais">País</label>
+                      <input type="text" class="form-control" id="inputPais" placeholder="Ecuador" required>
+                    </div>
+                    <div class="col-sm-6 col-md-3 form-group">
+                      <label for="inputCiudad">Ciudad</label>
+                      <input type="text" class="form-control" id="inputCiudad" placeholder="Guayaquil" required>
+                    </div>
+                    <div class="col-sm-12 col-md-12 form-group">
+                      <label for="inputMensaje">Mensaje</label>
+                      <textarea class="form-control" id="inputMensaje" rows="3"></textarea>
+                    </div>
+                </div>
+                    <div class="row p-2">
+                      <button type="submit" class="col-sm-12 offset-md-3 col-md-6 btn btn-primary">Enviar</button>
+                    </div>
+			</form>
+		</div>
+    </div>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBACmncymgwI-gq26ZED5L_sJrFW1qBjuA&callback=initMap"></script>
+	
+{% endblock %}
 
-		<hr>
-		<!-- footer -->
-		<footer class="footer">
-			<ul class="footer-menu">
-		      <li class="off-1 col-12 col-sm-12 col-md-2"><a href="">FAQs</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a href="">Terms &amp; Conditions</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a href="about_us_g3.html">Acerca de</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a href="contact_us.html">Contacto</a></li>
-			</ul>
-		  	<div class="footer-copyright text-center">&copy; 2018 Copyright:
-		    	<a href=""> EasyComm.com</a>
-		  	</div>
-		</footer>
-		<!-- endfooter-->
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBACmncymgwI-gq26ZED5L_sJrFW1qBjuA&callback=initMap"></script>
-	</body>
-</html>

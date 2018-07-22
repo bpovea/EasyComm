@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zxx" >
+	<head>
+		<meta charset="UTF-8">
+		<title>Easycomm - {% block title %} home {% endblock %} </title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Grupo3 &amp;6"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="{% static 'oscar/js/jquery-3.2.1.min.js'  %}"></script>
+		<script src="{% static 'oscar/js/bootstrap.min.js'  %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static 'oscar/css/bootstrap.css'  %}" >
+	    <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/font-awesome.css'  %}" >
+    	<link rel="stylesheet" type="text/css" href="{% static 'oscar/css/base.css'  %}" >
+    	<link rel="stylesheet" type="text/css" href="{% static 'oscar/css/main.css'  %}" >
+    	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
+	</head>
+
+	<body>
+		<header>
+			<h1>Easycomm</h1>
+		</header>
+		<!-- navbar -->
+		{% include "partials/nav_accounts.html" %}
+		<!-- end navbar -->
+		<br>
+		<!-- content -->
+
+		<div class="contenedor">
+			 {% block content %}{% endblock %}
+		</div>
+		<hr>
+		<!-- footer -->
+		<footer class="footer">
+			<ul class="footer-menu">
+		      <li class="off-1 col-12 col-sm-12 col-md-2"><a href="">FAQs</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a href="">Terms &amp; Conditions</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a  href="{% url 'about_us' %}">Acerca de</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a href="contact_us.html">Contacto</a></li>
+			</ul>
+		  	<div class="footer-copyright text-center">&copy; 2018 Copyright:
+		    	<a href=""> EasyComm.com</a>
+		  	</div>
+		</footer>
+		<!-- endfooter-->
+	</body>
+</html>

@@ -1,0 +1,154 @@
+{% extends "EasyComm/base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+	home 
+{% endblock %}
+
+{% block content %}	
+	<div class="row" >
+			<div id="home" data-ride="carousel" class=" carousel slide mx-auto d-block"  >
+		  <ul class="carousel-indicators">
+		    <li data-target="#home" data-slide-to="0" class="active"></li>
+		    <li data-target="#home" data-slide-to="1"></li>
+		    <li data-target="#home" data-slide-to="2"></li>
+		  </ul>
+		  <div class="carousel-inner" >
+		    <div class="carousel-item active "  >
+		     	<img src="{% static 'oscar/img/carousel1.jpg' %}"  class="img-fluid" alt="Exportadores a nivel nacional e internacional">
+		    	<div class="carousel-caption">
+					<h3>Easycomm</h3>
+					<p>Exportadores a nivel nacional e internacional</p>
+				</div>
+		    </div>
+		    <div class="carousel-item">
+		      <img src="{% static 'oscar/img/carousel2.jpg' %}" class="img-fluid" alt="Exportadores a nivel nacional e internacional">
+		      <div class="carousel-caption">
+					<h3>Easycomm</h3>
+					<p>Líderes a nivel nacional e internacional</p>
+				</div>
+		    </div>
+		    <div class="carousel-item" >
+		      <img src="{% static 'oscar/img/carousel3.jpg' %}"  class="img-fluid"  alt="Exportadores a nivel nacional e internacional">
+		      <div class="carousel-caption">
+					<h3>Easycomm</h3>
+					<p>Más de 100 empresas confian en nosotros</p>
+				</div>
+		    </div>
+		  </div>
+		  <a class="carousel-control-prev" href="#home" data-slide="prev">
+		    <span class="carousel-control-prev-icon"></span>
+		  </a>
+		  <a class="carousel-control-next" href="#home" data-slide="next">
+		    <span class="carousel-control-next-icon"></span>
+		  </a>
+
+		</div>
+	</div>
+	<hr>
+
+	<div class="row ">
+		<div class=" col-sm-12 col-md-3" >
+			<aside id="aside">
+				<h2>Promociones </h2>
+					<br><br>
+					<video class="video mx-auto d-block" controls>
+						<source src="{% static 'oscar/video/uso.mp4' %}"  type="video/mp4" >
+					</video>
+				<br>
+				<div >
+						<a href="">
+							<img" src="{% static 'oscar/img/promociones.jpg' %}" class="mx-auto d-block rounded image" alt="">
+					</a>
+				</div>
+
+				<br>
+				<div >
+						<a href="">
+							<img src="{% static 'oscar/img/promociones.jpg' %}" class=" mx-auto d-block rounded image" alt="">
+					</a>
+				</div>
+
+			</aside>
+		</div>
+		<div class="col-sm-12 col-md-9 " >
+			<section>
+				<h2>Principal</h2>
+				<article>
+					<p class="text-justify">
+						El proyecto consiste en un E-commerce que reúna a varios exportadores como socios, a fin de que publiquen sus productos, manejen su propio stock y puedan vender en nuestra plataforma. Para obtener ingresos se cobrará comisiones en base a cierto porcentaje aplicado al valor de cada venta. La idea surge de una propuesta de un conocido que trabaja con exportaciones y desea implementarlo en nuestro país.
+					</p>
+				</article>
+				
+				<br>
+
+				<p>Ofreciendo servicios a centenas de empresas por más de 20 años</p>
+				<div class="row ">
+					<div class="col-md-12 text-center">
+						<a href="https://14308-ar.all.biz/">
+							<img src="{% static 'oscar/img/partners/partner1.jpg' %}" alt="Partner 1" class="img-thumbnail" >
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner2.jpg' %}" alt="Partner 2" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner3.jpg' %}" alt="Partner 3" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner4.jpg' %}" alt="Partner 4" class="img-thumbnail" >
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
+						</a>
+						<a href="https://14308-ar.all.biz/">
+							<img src="{% static 'oscar/img/partners/partner1.jpg' %}" alt="Partner 1" class="img-thumbnail" >
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner2.jpg' %}" alt="Partner 2" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner3.jpg' %}" alt="Partner 3" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner4.jpg' %}" alt="Partner 4" class="img-thumbnail" >
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
+						</a>
+						<a href="https://14308-ar.all.biz/">
+							<img src="{% static 'oscar/img/partners/partner1.jpg' %}" alt="Partner 1" class="img-thumbnail" >
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner2.jpg' %}" alt="Partner 2" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner3.jpg' %}" alt="Partner 3" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner4.jpg' %}" alt="Partner 4" class="img-thumbnail" >
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
+						</a>
+						<a href="">
+							<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
+						</a>
+					</div>
+				</div>
+				<br>
+			</section>
+		</div>
+	</div>
+{% endblock %}

@@ -17,6 +17,7 @@ from django.urls import include, path
 from django.conf.urls import url
 from django.contrib import admin
 from oscar.app import application
+from . import views
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -26,5 +27,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'', application.urls),
+    
+
+
+
+    url(r'home/',views.home),
+    url(r'about_us/',views.about_us,name = "about_us"),
 ]
 

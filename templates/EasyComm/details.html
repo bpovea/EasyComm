@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zxx" >
+	<head>
+		<meta charset="UTF-8">
+		<title> EasyComm </title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Grupo3&6"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap-notify.min.js"></script>
+		<script src="js/alerts.js"></script>
+		<script src="js/d3.js"></script>
+		<script src="js/d3_tip.js"></script>
+		<script src="js/detail.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+		<link rel="stylesheet" type="text/css" href="css/base.css" >
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
+	</head>
+
+	<body>
+		<header>
+			<h1>Easycomm</h1>
+		</header>
+
+		<!-- navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-center">
+		    	<li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link" href="products.html">Productos</a></li>
+				<li class="nav-item"><a class="nav-link" href="partners.html">Socios</a></li>
+				<li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+				<li class="nav-item"><a class="nav-link" href="contact_us.html">Contacto</a></li>
+				<li class="nav-item"><a class="nav-link" href="validaciones.html">Validaciones</a></li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0 nav-form">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+		    </form>
+		  </div>
+		</nav>
+		<!-- end navbar -->
+        <br>
+		<!-- content -->
+
+		<div class="contenedor">
+  			<div class="row ">
+				<div class="col-md-1 d-none d-sm-block" id="mini-img" >
+					<img src="img/products/cafe1.jpg" alt="cafe1">
+					<img src="img/products/cafe2.jpeg" alt="cafe1">
+					<img src="img/products/cafe3.jpg" alt="cafe1">
+				</div>
+				<div class=" col-sm-12 col-md-5">
+					<img src="img/products/cafe1.jpg" id="main-img" alt="cafe1" >
+				</div>
+				<div class="col-md-12 d-block d-sm-none" id="mini-img-mobile">
+					<img src="img/products/cafe1.jpg" alt="cafe1">
+					<img src="img/products/cafe2.jpeg" alt="cafe1">
+					<img src="img/products/cafe3.jpg" alt="cafe1">
+				</div>
+				<div class=" col-sm-12 col-md-6 " >
+					<h3>Titulo producto</h3>
+					<p>
+						$3.50 - $5.00 x libra
+					</p>
+					<p>
+						El producto será entregado de 2 a 5 días laborables.
+					</p>
+                    <div class="row">
+                        <div class="offset-3 col-7 offset-sm-5  col-sm-4 offset-md-5 col-md-5">
+						<button onclick='decrementar()'>
+                            <i class="fa fa fa-minus "></i>
+                        </button>
+                        <input id="qty" name="qty" class="text-center" value="1" >
+                        <button onclick='incrementar()'>
+                            <i class="fa fa fa-plus"></i>
+                        </button><br>
+                        </div>
+                    </div>
+					<form class="text-center ">
+						<button type="submit" class="btn btn-primary mx-auto m-1">Añadir al carrito</button>
+                        
+						<button type="submit" class="btn btn-primary mx-auto m-1">Añadir comentario</button>
+					</form>
+					
+				</div>
+				<div class="col-sm-12 col-md-12" id="tab-extra-info">
+					<ul class="nav nav-tabs col-md-12">
+						<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#details">Detalles</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#comentaries">Comentarios</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#more'information">Información</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#statistics">Estadística</a>
+						</li>
+					</ul>
+					<div class="tab-content col-md-12">
+					  <div id="details" class="tab-pane fade active show col-md-12">
+					    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut mi a nunc egestas rutrum. Sed accumsan gravida orci vitae feugiat. Integer eu lacinia dui. Morbi rutrum blandit felis ut varius. Vestibulum convallis nibh id sem sollicitudin blandit. Mauris ornare tortor sed purus sodales, sit amet sagittis magna lobortis. Sed eu mattis libero. Morbi lectus tellus, egestas id iaculis quis, hendrerit eget ligula. Morbi eu ligula dui. Pellentesque nec velit massa. </p>
+					  </div>
+					  <div id="comentaries" class="tab-pane fade col-md-12">
+					  	<table class="d-none d-sm-block">
+					  		<tr>
+					  			<td class="usr-img">
+						    		<img src="img/users/usr1.jpg" class="usr-comment" alt="">
+						    		<div class="ranking">
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star-o"></i>
+						    		</div>
+							    </td>
+							    <td class="comment">
+						    		<h4>Frank Zukerver</h4>
+						    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut mi a nunc egestas rutrum. Sed accumsan gravida orci vitae feugiat.</p>
+							    </td>
+					  		</tr>
+					  		<tr>
+					  			<td class="usr-img">
+						    		<img src="img/users/usr2.jpg" class="usr-comment"  alt="">
+						    		<div class="ranking">
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    		</div>
+							    </td>
+							    <td class="comment">
+						    		<h4>Jose Jimenez Gonzalez</h4>
+						    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut mi a nunc egestas rutrum. Sed accumsan gravida orci vitae feugiat.</p>
+							    </td>
+					  		</tr>
+					  	</table>
+					  	<table class="d-block d-sm-none">
+					  		<tr>
+					  			<td class="usr-img">
+						    		<img src="img/users/usr1.jpg" class="usr-comment"  alt="">
+						    		<div class="ranking">
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star-o"></i>
+						    		</div>
+							    </td>
+					  		</tr>
+					  		<tr>
+					  			<td class="comment">
+						    		<h4>Frank Zukerver</h4>
+						    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut mi a nunc egestas rutrum. Sed accumsan gravida orci vitae feugiat.</p>
+							    </td>
+					  		</tr>
+					  		<tr>
+					  			<td class="usr-img">
+						    		<img src="img/users/usr2.jpg" class="usr-comment"  alt="">
+						    		<div class="ranking">
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    			<i class="fa fa-star"></i>
+						    		</div>
+							    </td>
+							</tr>
+							<tr>
+							    <td class="comment">
+						    		<h4>Jose Jimenez Gonzalez</h4>
+						    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut mi a nunc egestas rutrum. Sed accumsan gravida orci vitae feugiat.</p>
+							    </td>
+					  		</tr>
+					  	</table>
+					  </div>
+					  <div id="more'information" class="tab-pane fade col-md-12	">
+					    <h3>more info</h3>
+					    <p>Some content in menu 1.</p>
+					  </div>
+					  <div id="statistics" class="tab-pane fade scrollable col-md-12">
+					  	<svg id="graph" class="rounded mx-auto d-block border"></svg>
+					    
+					  </div>
+					</div>
+			</div>
+
+        
+            </div>
+		</div>
+
+		<!-- end content -->
+
+		<hr>
+		<!-- footer -->
+		<footer class="footer">
+			<ul class="footer-menu">
+		      <li class="off-1 col-12 col-sm-12 col-md-2"><a href="">FAQs</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a href="">Terms &amp; Conditions</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a href="about_us_g3.html">Acerca de</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a href="contact_us.html">Contacto</a></li>
+			</ul>
+		  	<div class="footer-copyright text-center">&copy; 2018 Copyright:
+		    	<a href=""> EasyComm.com</a>
+		  	</div>
+		</footer>
+		<!-- endfooter-->
+
+	</body>
+</html>

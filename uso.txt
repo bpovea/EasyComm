@@ -1,0 +1,4 @@
+pythonanage.py createsuperuser --username mauricio --email mdleiton@espol.edu.ec 
+# contrasena a1234567890
+
+It is important to note that the Django admin site is not supported. It may or may not work and is only included in the sandbox for developer’s convenience.

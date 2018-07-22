@@ -1,0 +1,58 @@
+{
+    "preguntas": [
+        {
+            "id":"1",
+            "pregunta":"¿cuáles son las tarifas disponibles?", 
+            "respuesta":"existen una variedad de tarifas deacuerdo a los mercados que se requieran alcanzar. Por favor visite easyCom.com/Contratos",
+            "cantidad_visitas":12,
+            "etiquetas":"tarifas,contratos",
+            "autor":"G3",
+            "fecha":"01-01-2018"
+        },
+        {
+            "id":"2",
+            "pregunta":"¿poseen convenios preferencias con otros paises?", 
+            "respuesta":"Si. Se poseen convenios estrategicos con paises como: Brasil, Colombia, Costa Rica.",
+            "cantidad_visitas":3,
+            "etiquetas":"convenios, socios",
+            "autor":"G3",
+            "fecha":"01-02-2018"
+        },
+        {
+            "id":"3",
+            "pregunta":"¿a qué frecuencia de realizan el traslado de productos?", 
+            "respuesta":"cada 12 horas a nivel nacional. a nivel de America del Sur cada 2 dias.",
+            "cantidad_visitas":4,
+            "etiquetas":"productos,frecuencias",
+            "autor":"G3",
+            "fecha":"01-04-2018"
+        },
+        {
+            "id":"4",
+            "pregunta":"¿cuáles son las tarifas disponibles?", 
+            "respuesta":"existen una variedad de tarifas deacuerdo a los mercados que se requieran alcanzar. Por favor visite easyCom.com/Contratos",
+            "cantidad_visitas":12,
+            "etiquetas":"tarifas,contratos",
+            "autor":"G3",
+            "fecha":"01-01-2018"
+        },
+        {
+            "id":"5",
+            "pregunta":"¿poseen convenios preferencias con otros paises?", 
+            "respuesta":"Si. Se poseen convenios estrategicos con paises como: Brasil, Colombia, Costa Rica.",
+            "cantidad_visitas":3,
+            "etiquetas":"convenios, socios",
+            "autor":"G3",
+            "fecha":"01-02-2018"
+        },
+        {
+            "id":"6",
+            "pregunta":"¿a qué frecuencia de realizan el traslado de producto?", 
+            "respuesta":"cada 12 horas a nivel nacional. a nivel de America del Sur cada 2 dias.",
+            "cantidad_visitas":4,
+            "etiquetas":"productos,frecuencias",
+            "autor":"G3",
+            "fecha":"01-04-2018"
+        }
+    ]
+}

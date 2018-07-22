@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zxx" >
+	<head>
+		<meta charset="UTF-8">
+		<title> EasyComm </title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="Grupo3&6"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/modals.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
+		<link rel="stylesheet" type="text/css" href="css/base.css" >
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
+	</head>
+
+	<body>
+		<header>
+			<h1>Easycomm</h1>
+		</header>
+
+		<!-- navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-center">
+		    	<li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+				<li class="nav-item"><a class="nav-link" href="products.html">Productos</a></li>
+				<li class="nav-item"><a class="nav-link" href="partners.html">Socios</a></li>
+				<li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+				<li class="nav-item"><a class="nav-link" href="contact_us.html">Contacto</a></li>
+				<li class="nav-item active"><a class="nav-link" href="validaciones.html">Validaciones</a></li>
+		    </ul>
+		    <form class="form-inline my-2 my-lg-0 nav-form">
+		      <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+		      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+		    </form>
+		  </div>
+		</nav>
+		<!-- end navbar -->
+        <br>
+		<!-- content -->
+
+		<div class="contenedor">
+  			<div class="row ">
+				<div class="col-sm-12 col-md-12" >
+					<h2 class="text-center">Validaciones de html</h2>
+					<img id="imagen-modal" src="img/validate/index.png">
+				</div>
+				
+				<div class="col-xs-12 col-sm-6 col-md-3" >
+					<img  src="img/validate/index.png" class="image image-validacion" alt="Pantalla index.html" id="index" onclick="presentar('index')">
+                    <div class="p-2">Pantalla index.html</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3" >
+					<img  src="img/validate/about_us_g3.png" class="image image-validacion" alt="Pantalla about_us_g3.html"  id="about_us_g3" onclick="presentar('about_us_g3')">
+                    <div class="p-2">Pantalla about_us_g3.html</div>				
+                </div>
+				<div class="col-xs-12 col-sm-6 col-md-3" >
+					<img  src="img/validate/contact_us.png" class="image image-validacion" alt="Pantalla contact_us.html"  id="contact_us" onclick="presentar('contact_us')">
+                    <div class="p-2">Pantalla contact_us.html</div>	
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3" >
+					<img  src="img/validate/details.png" class="image image-validacion" alt="Pantalla details.html"  id="details" onclick="presentar('details')">
+                    <div class="p-2">Pantalla details.html</div>	
+				</div>	
+                <div class="col-xs-12 col-sm-6 col-md-3" >
+					<img  src="img/validate/faqs.png" class="image image-validacion" alt="Pantalla faqs.html" id="faqs" onclick="presentar('faqs')">
+                    <div class="p-2">Pantalla faqs.html</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3" >
+					<img  src="img/validate/partners.png" class="image image-validacion" alt="Pantalla partners.html"  id="partners" onclick="presentar('partners')">
+                    <div class="p-2">Pantalla partners.html</div>				
+                </div>
+				<div class="col-xs-12 col-sm-6 col-md-3" >
+					<img  src="img/validate/products.png" class="image image-validacion" alt="Pantalla products.html"  id="products" onclick="presentar('products')">
+                    <div class="p-2">Pantalla products.html</div>	
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-3" >
+					<img  src="img/validate/validaciones.png" class="image image-validacion" alt="Pantalla validaciones.html"  id="validaciones" onclick="presentar('validaciones')">
+                    <div class="p-2">Pantalla validaciones.html</div>	
+				</div>	
+			</div>
+			<!--div class="modal fade image1" id="modal" tabindex="-1" role="dialog" >
+		        <div class="modal-dialog" role="document">
+		        	<span class="close">&times;</span>
+		        	<img  id="imagen-modal" class="image1 modal-content" src="img/default-image.jpg" alt="">
+		        	<div class="border border-secondary rounded bg-light p-2" id="caption1"></div>         
+		        </div>
+      		</div--> 
+		</div>
+
+		<!-- end content -->
+
+		<hr>
+		<!-- footer -->
+		<footer class="footer">
+			<ul class="footer-menu">
+		      <li class="off-1 col-12 col-sm-12 col-md-2"><a href="">FAQs</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a href="">Terms &amp; Conditions</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a href="about_us_g3.html">Acerca de</a></li>
+		      <li class="col-12 col-sm-12 col-md-2"><a href="contact_us.html">Contacto</a></li>
+			</ul>
+		  	<div class="footer-copyright text-center">&copy; 2018 Copyright:
+		    	<a href=""> EasyComm.com</a>
+		  	</div>
+		</footer>
+		<!-- endfooter-->
+
+	</body>
+</html>

@@ -1,65 +1,76 @@
 {% load i18n %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 navbar-center">
-            <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="products.html">Productos</a></li>
-            <li class="nav-item"><a class="nav-link" href="partners.html">Socios</a></li>
-            <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contacto</a></li>
-            <li class="nav-item"><a class="nav-link" href="validaciones.html">Validaciones</a></li>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {% if user.is_authenticated %}
-            {% block nav_account_navbar_authenticated %}
-                <li class="nav-item">
-                    {% if num_unread_notifications > 0 %}
-                        {# If user has new notifications - we change account link to go to inbox #}
-                        <a class="nav-link" href="{% url 'customer:notifications-inbox' %}">
-                            <i class="icon-user"></i>
-                            {% trans "Account" %}
-                            <span class="label label-warning">{{ num_unread_notifications }}</span>
-                        </a>
-                    {% else %}
-                        <a class="nav-link" href="{% url 'customer:summary' %}"><i class="icon-user"></i> {% trans "Account" %}</a>
-                    {% endif %}
-                </li >
-                {% if user.is_staff or perms.partner.dashboard_access %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:index' %}"><i class="icon-list-ul"></i> {% trans "Dashboard" %}</a></li>
-                {% endif %}
-                <li class="nav-item"><a class="nav-link" id="logout_link" href="{% url 'customer:logout' %}"><i class="icon-signout"></i> {% trans "Logout" %}</a></li>
-                {% endblock %}
-            {% else %}
-                <li class="nav-item"><a id="login_link" class="nav-link" href="{% url 'customer:login' %}"><i class="icon-signin"></i> {% trans "Login or register" %}</a></li>
-            {% endif %}
-        </ul>
-        <form class="form-inline my-2 my-lg-0 nav-form">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    <div class="container-fluid">
-    {% block nav_account_languages %}
-    {% if LANGUAGES|length > 1 %}
-        <form id="language_selector" class="navbar-left navbar-form" action="{% url 'set_language' %}" method="post">
-            {% csrf_token %}
-            <input name="next" type="hidden" value="{{ language_neutral_url_path }}" />
-            <div class="form-group">
-                <select name="language" class="form-control">
-                    {% get_language_info_list for LANGUAGES as languages %}
-                    {% for language in languages %}
-                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE%} selected="selected"{% endif %}>
-                            {{ language.name_local }}
-                        </option>
-                    {% endfor %}
-                </select>
-            </div>
-            <button class="btn btn-default" type="submit" data-loading-text="{% trans 'Submitting...' %}">{% trans "Go" %}</button>
-        </form>
-    {% endif %}
-    {% endblock %}
+
+<div id="top_page" class="navbar navbar-default navbar-static-top accounts">
+    {# This is used in mobile view #}
+    <div class="navbar-header">
+        <a class="btn btn-default navbar-toggle collapsed" data-toggle="collapse" data-target=".account-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
     </div>
 
-</nav>
+    <div class="navbar-collapse account-collapse collapse">
+        <div class="container-fluid">
+            {% block nav_account_languages %}
+            {% if LANGUAGES|length > 1 %}
+                <form id="language_selector" class="navbar-left navbar-form" action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ language_neutral_url_path }}" />
+                    <div class="form-group">
+                        <select name="language" class="form-control">
+                            {% get_language_info_list for LANGUAGES as languages %}
+                            {% for language in languages %}
+                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE%} selected="selected"{% endif %}>
+                                    {{ language.name_local }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <button class="btn btn-default" type="submit" data-loading-text="{% trans 'Submitting...' %}">{% trans "Go" %}</button>
+                </form>
+            {% endif %}
+            {% endblock %}
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="products.html">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="partners.html">Socios</a></li>
+                <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="validaciones.html">Validaciones</a></li>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+
+
+                
+                {% if user.is_authenticated %}
+                {% block nav_account_navbar_authenticated %}
+                    <li>
+                        {% if num_unread_notifications > 0 %}
+                            {# If user has new notifications - we change account link to go to inbox #}
+                            <a href="{% url 'customer:notifications-inbox' %}">
+                                <i class="icon-user"></i>
+                                {% trans "Account" %}
+                                <span class="label label-warning">{{ num_unread_notifications }}</span>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'customer:summary' %}"><i class="icon-user"></i> {% trans "Account" %}</a>
+                        {% endif %}
+                    </li>
+                    {% if user.is_staff or perms.partner.dashboard_access %}
+                        <li><a href="{% url 'dashboard:index' %}"><i class="icon-list-ul"></i> {% trans "Dashboard" %}</a></li>
+                    {% endif %}
+                    <li><a id="logout_link" href="{% url 'customer:logout' %}"><i class="icon-signout"></i> {% trans "Logout" %}</a></li>
+                {% endblock %}
+                {% else %}
+                    <li><a id="login_link" href="{% url 'customer:login' %}"><i class="icon-signin"></i> {% trans "Login or register" %}</a></li>
+                {% endif %}
+            </ul>
+            <form class="form-inline my-2 my-lg-0 nav-form">
+            <input class="form-control mr-sm-2" type="search" placeholder="Buscar">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

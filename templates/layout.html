@@ -3,19 +3,15 @@
 {% load promotion_tags %}
 
 {% block styles %}
-    <!--
     {% if use_less %}
         <link rel="stylesheet/less" type="text/css" href="{% static "oscar/less/styles.less" %}" />
     {% else %}
         <link rel="stylesheet" type="text/css" href="{% static "oscar/css/styles.css" %}" />
     {% endif %}
-    -->
     <link rel="stylesheet" href="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "oscar/css/datetimepicker.css" %}" />
 
     {# agregados #}
-    <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/bootstrap.css'  %}" >
-    <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/font-awesome.css'  %}" >
     <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/base.css'  %}" >
     <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/main.css'  %}" >
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 

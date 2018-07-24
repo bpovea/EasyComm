@@ -5,17 +5,21 @@
     {% trans 'Login or register' %} | {{ block.super }}
 {% endblock %}
 
-{% block mini_basket %}
-    <br>
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{{ homepage_url }}">{% trans 'Home' %}</a>
+        </li>
+        <li class="active">{% trans 'Login or register' %}</li>
+    </ul>
 {% endblock %}
 
-{% block navigation %}
-    <br>
-{% endblock %}
+{% block header %}{% endblock %}
 
-{% block content_wrapper  %}
+{% block content %}
+
     <div class="row">
-        <div class="offset-md-2 col-sm-4 login_form border mr-2">
+        <div class="col-sm-6 login_form">
             <form id="login_form" action="{{ request.get_full_path }}" method="post" class="well" >
                 <h2>{% trans 'Log In' %}</h2>
                 {% csrf_token %}
@@ -24,7 +28,7 @@
                 <button name="login_submit" type="submit" value="Log In" class="btn btn-lg btn-primary" data-loading-text="{% trans "Logging in..." %}">{% trans 'Log In' %}</button>
             </form>
         </div>
-        <div class="col-sm-4 register_form border">
+        <div class="col-sm-6 register_form">
             <form id="register_form" action="{{ request.get_full_path }}" method="post" class="well">
                 <h2>{% trans 'Register' %}</h2>
                 {% csrf_token %}
@@ -33,4 +37,5 @@
             </form>
         </div>
     </div>
-{% endblock content_wrapper %}
+
+{% endblock content %}

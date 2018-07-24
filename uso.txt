@@ -1,3 +1,5 @@
+virtualenv --python=python3.6 ProjectDjango
+
 pythonanage.py createsuperuser --username mauricio --email mdleiton@espol.edu.ec 
 # contrasena a1234567890
 

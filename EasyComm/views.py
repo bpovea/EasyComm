@@ -10,3 +10,6 @@ def about_us(request):
 
 def contact_us(request):
 	return render(request,'../templates/EasyComm/contact_us.html')
+
+def faqs(request):
+	return render(request,'../templates/EasyComm/faqs.html')

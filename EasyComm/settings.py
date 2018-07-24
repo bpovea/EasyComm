@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'compressor',
+    'rest_framework',
+    'oscarapi',
     'widget_tweaks',
 ] + get_core_apps(['EasyComm_apps.order'])
 

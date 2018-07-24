@@ -18,6 +18,7 @@ from django.conf.urls import url
 from django.contrib import admin
 from oscar.app import application
 from . import views
+from oscarapi.app import application as api
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -27,8 +28,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'', application.urls),
-    
-
+    url(r'^api/', api.urls),
 
 
     url(r'home/',views.home,name = "home"),

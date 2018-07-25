@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/faqs.js"></script>
+		
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" >
@@ -54,7 +54,6 @@
 {% block title %} 
 	Acerca de nosotros
 {% endblock %}
-
 		<!-- content -->
 {% block content %}	
 		<br>
@@ -89,7 +88,7 @@
 						<div class="col-sm-12 col-md-4 ">
 						    <div class="thumbnail p-2">
 						      <a href="">
-						        <img class="faq-image mx-auto d-block" src="img/comunity.jpg" alt="Comunidad">
+						        <img class="faq-image mx-auto d-block" src="{% static 'oscar/img/comunity.jpg' %}" alt="Comunidad">
 						        <div class="caption text-center">
 						          <h3>Comunidad</h3>
 						        </div>
@@ -99,7 +98,7 @@
 						<div class="col-sm-12 col-md-4">
 						    <div class="thumbnail p-2">
 						      <a href="">
-						        <img class="faq-image mx-auto d-block" src="img/more_visited.jpg"  alt="Más visitados">
+						        <img class="faq-image mx-auto d-block" src="{% static 'oscar/img/more_visited.jpg' %}"  alt="Más visitados">
 						        <div class="caption text-center">
 						          <h3>Más visitados</h3>
 						        </div>
@@ -109,7 +108,7 @@
 						<div class="col-sm-12 col-md-4">
 						    <div class="thumbnail p-2">
 						      <a href="">
-						        <img class="faq-image mx-auto d-block" src="img/categories.jpg" alt="Categorias">
+						        <img class="faq-image mx-auto d-block" src="{% static 'oscar/img/categories.jpg' %}" alt="Categorias">
 						        <div class="caption text-center">
 						          <h3>Categorias</h3>
 						        </div>
@@ -170,23 +169,7 @@
 
 		<hr>
 {% endblock %}
-		<!-- footer -->
-<!--
-		<footer class="footer">
-			<ul class="footer-menu">
-		      <li class="off-1 col-12 col-sm-12 col-md-2"><a href="">FAQs</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a href="">Terms &amp; Conditions</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a href="about_us_g3.html">Acerca de</a></li>
-		      <li class="col-12 col-sm-12 col-md-2"><a href="contact_us.html">Contacto</a></li>
-			</ul>
-		  	<div class="footer-copyright text-center">&copy; 2018 Copyright:
-		    	<a href=""> EasyComm.com</a>
-		  	</div>
-		</footer>
--->
-		<!-- endfooter-->
-<!--
-	</body>
-</html>
 
--->
+{% block scripts %}
+	<script src="{% static 'oscar/js/faqs.js' %}"></script>
+{% endblock %}

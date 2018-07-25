@@ -37,7 +37,7 @@ function loadQuestionsAnswer(json) {
 (function() {
     //cargar peguntas
      $.ajax({
-        url: "data/faqs.json",
+        url: "/faqs_load/",
         type:"GET",    
         dataType : 'json',
         success : loadQuestionsAnswer,

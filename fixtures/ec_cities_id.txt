@@ -1,0 +1,252 @@
+=================================
+  CIUDAD                    ID
+=================================
+Alamor                      122
+Alangasi                    187
+Alausi                      31
+Alf. Baquer. Moreno         91
+Alluriquin                  222
+Aloag                       188
+Amaguaña                    189
+Ambato                      234
+Ambuqui                     112
+Ancon                       92
+Arajuno                     181
+Archidona                   172
+Arenillas                   60
+Atacames                    74
+Atahualpa                   61
+Atuntaqui                   113
+Azogues                     19
+Baba                        137
+Babahoyo                    138
+Baeza                       173
+Bahia De Caraquez           147
+Balao                       93
+Balsas                      62
+Balzar                      94
+Baños                       235
+Biblian                     20
+Bolivar                     23
+Borbon                      75
+Buena Fe                    139
+Cajabamba                   32
+Calceta                     148
+Calderon                    190
+Caluma                      10
+Cariamanga                  123
+Carlos Julio Arosemena Tola 174
+Cascales                    226
+Catacocha                   124
+Catamayo                    125
+Catarama                    140
+Cayambe                     191
+Cañar                       21
+Celica                      126
+Cevallos                    236
+Chaguarpamba                127
+Chambo                      33
+Chantillin                  45
+Chilla                      63
+Chillanes                   11
+Chinchipe                   245
+Chone                       149
+Chunchi                     34
+Colimes                     95
+Colta                       35
+Conocoto                    192
+Cotacachi                   114
+Cuenca                      1
+Cumanda                     36
+Cumbaya                     193
+Cuyabeno                    227
+Daule                       96
+Duran                       97
+Echeandia                   12
+El Angel                    24
+El Carmen                   150
+El Chaco                    175
+El Coca                     194
+El Corazon                  46
+El Empalme                  98
+El Guabo                    64
+El Quinche                  195
+El Triunfo                  99
+Eloy Alfaro                 76
+Esmeraldas                  77
+Espindola                   128
+Flavio Alfaro               151
+Francisco De Orellana       177
+Giron                       2
+Gonzalo Pizarro             228
+Gonzanama                   129
+Gualaceo                    3
+Gualaquiza                  167
+Guamote                     37
+Guano                       38
+Guaranda                    13
+Guayaquil                   100
+Guayllabamba                196
+Guaytacama                  47
+Huaca                       25
+Huaquillas                  65
+Huigra                      39
+Ibarra                      115
+Izamba                      237
+Jama                        152
+Jipijapa                    153
+Julio Andrade               26
+Junin                       154
+La Asunción                 14
+La Concordia                78
+La Independencia            79
+La Joya De Los Sachas       178
+La Libertad                 219
+La Magdalena                15
+La Mana                     48
+La Merced                   197
+La Paz                      27
+La Troncal                  22
+La Union                    80
+Lago Agrio                  229
+Las Naves                   16
+Lasso                       49
+Latacunga                   50
+Limon Indanza               168
+Limones                     81
+Loja                        130
+Loreto                      179
+Luz De America              223
+Macara                      131
+Macas                       169
+Machachi                    198
+Machala                     66
+Manta                       155
+Marcabeli                   67
+Mera                        182
+Milagro                     101
+Mindo                       199
+Mira                        28
+Mocha                       238
+Montalvo                    141
+Montecristi                 156
+Muisne                      82
+Mulalo                      51
+Nabon                       4
+Nangaritza                  246
+Naranjal                    102
+Naranjito                   103
+Nayon                       200
+Nueva Loja                  230
+Nuevo Rocafuerte            180
+Otavalo                     116
+Pajan                       157
+Palestina                   104
+Pallatanga                  40
+Palora                      183
+Pasaje                      68
+Pastocalle                  52
+Patate                      239
+Paute                       5
+Pedernales                  158
+Pedro Carbo                 105
+Pedro Vicente Maldonado     201
+Pelileo                     240
+Penipe                      41
+Pichincha                   159
+Pifo                        202
+Pillaro                     241
+Pimampiro                   117
+Pindal                      132
+Pintag                      203
+Piñas                       69
+Playas                      106
+Poalo                       53
+Pomasqui                    204
+Portovelo                   70
+Portoviejo                  160
+Pucara                      6
+Puebloviejo                 142
+Puembo                      205
+Puerto Bolivar              71
+Puerto Lopez                161
+Puerto Quito                206
+Pujili                      54
+Pusuqui                     207
+Putumayo                    231
+Puyo                        184
+Quero                       242
+Quevedo                     143
+Quilanga                    133
+Quininde                    83
+Quisapincha                 243
+Quito                       208
+Riobamba                    42
+Rioverde                    84
+Rocafuerte                  162
+Salcedo                     55
+Salinas                     220
+Samborondon                 107
+Same Casablanca             85
+San Andres                  43
+San Antonio De Ibarra       118
+San Antonio De Pichincha    209
+San Cristobal               90
+San Fernando                7
+San Gabriel                 29
+San José de Chimbo          17
+San Juan                    44
+San Lorenzo                 86
+San Miguel                  18
+San Miguel De Los Bancos    210
+San Miguel De Urcuqui       119
+San Pablo                   120
+San Rafael                  211
+San Vicente                 163
+Sangolqui                   212
+Santa Ana                   164
+Santa Clara                 185
+Santa Elena                 221
+Santa Isabel                8
+Santa Lucia                 108
+Santa Rosa                  72
+Santiago                    170
+Santo Domingo               213
+Santo Domingo               224
+Saquisilli                  56
+Saraguro                    134
+Shell                       186
+Shushufindi                 232
+Sigchos                     57
+Sigsig                      9
+Sozoranga                   135
+Sua                         87
+Sucua                       171
+Sucumbios                   233
+Tabacundo                   214
+Tabavela                    215
+Tambillo                    216
+Tanicuchi                   58
+Taura                       109
+Tena                        176
+Tisaleo                     244
+Toacaso                     59
+Tonchigue                   88
+Tonsupa                     89
+Tosagua                     165
+Tulcan                      30
+Tumbabiro                   121
+Tumbaco                     217
+Urbina Jado                 110
+Valencia                    144
+Valle Hermoso               225
+Veinticuatro De Mayo        166
+Ventanas                    145
+Vince                       146
+Yaguachi                    111
+Yantzaza                    247
+Yaruqui                     218
+Yucuambi                    248
+Zamora                      249
+Zapotillo                   136
+Zaruma                      73

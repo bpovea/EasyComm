@@ -1,0 +1,58 @@
+[
+    {
+        "pk": 1,
+        "model": "user.poll",
+        "fields": {
+            "title": "Youtube"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "user.poll",
+        "fields": {
+            "title": "Facebook"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "user.poll",
+        "fields": {
+            "title": "Instagram"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "user.poll",
+        "fields": {
+            "title": "Twitter"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "user.poll",
+        "fields": {
+            "title": "Amistades"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "user.poll",
+        "fields": {
+            "title": "Radios"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "user.poll",
+        "fields": {
+            "title": "Volante"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "user.poll",
+        "fields": {
+            "title": "Otros"
+        }
+    }
+]

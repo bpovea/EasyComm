@@ -1,0 +1,15 @@
+actualizar los requirementes:
+pip install -r requirements.txt
+
+ejecutar en la consola:
+python manage.py oscar_populate_countries --no-shipping
+python manage.py loaddata fixtures/ec_provinces.json
+python manage.py loaddata fixtures/ec_cities.json
+
+Habilitar Ecuador para envio:
+1 ir al admin de django (localhost:8000/admin)
+2 entrar el modelo Contry
+3 Buscar Ecuador
+4 habilitar el check [/]Is shipping country
+5 guardar cambios
+

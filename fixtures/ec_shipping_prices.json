@@ -1,0 +1,29 @@
+[
+    {
+        "pk": 1,
+        "model": "shipping.shippingprice",
+        "fields": {
+            "name": "Local",
+            "price_initial": 3.00,
+            "price_per_kilo": 0.33
+        }
+    },
+    {
+        "pk": 2,
+        "model": "shipping.shippingprice",
+        "fields": {
+            "name": "Provincial",
+            "price_initial": 3.46,
+            "price_per_kilo": 0.69
+        }
+    },
+    {
+        "pk": 3,
+        "model": "shipping.shippingprice",
+        "fields": {
+            "name": "Regional",
+            "price_initial": 5.53,
+            "price_per_kilo": 2.5
+        }
+    }
+]

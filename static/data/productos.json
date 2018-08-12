@@ -1,0 +1,49 @@
+[    
+    {
+        "images": [
+            {
+                "original": "http://localhost:8001/static/apps/images/products/2018/08/000000001.jpg",
+                "caption": "",
+                "display_order": 0,
+                "date_created": "2018-08-12T03:19:52.024359Z",
+                "product": 1
+            }
+        ],
+        "stockrecords": [
+            {
+                "id": 1,
+                "partner_sku": "0000011",
+                "price_currency": "DOLLAR",
+                "price_excl_tax": "560.00",
+                "price_retail": "600.00",
+                "cost_price": "540.00",
+                "num_in_stock": 20,
+                "num_allocated": null,
+                "low_stock_threshold": 2,
+                "date_created": "2018-08-12T04:38:00.291003Z",
+                "date_updated": "2018-08-12T04:38:00.291122Z",
+                "product": 1,
+                "partner": 3
+            }
+        ],
+        "structure": "standalone",
+        "upc": "000000001",
+        "title": "2018 HP 15.6\" Touchscreen Laptop PC,",
+        "slug": "2018-hp-156-touchscreen-laptop-pc",
+        "description": "<h1 id=\"title\" class=\"a-size-large a-spacing-none\"><span id=\"productTitle\" class=\"a-size-large\">2018 HP 15.6\" Touchscreen Laptop PC, Intel Core i5-7200U, 8GB DDR4, 2TB HDD, Intel HD Graphics 620, 802.11ac, Bluetooth, DVD RW, USB 3.1, HDMI, Webcam, Windows 10 Home, Silver </span></h1>",
+        "rating": null,
+        "date_created": "2018-08-12T03:17:37.874101Z",
+        "date_updated": "2018-08-12T04:38:00.212792Z",
+        "is_discountable": true,
+        "parent": null,
+        "product_class": 3,
+        "attributes": [],
+        "product_options": [],
+        "recommended_products": [],
+        "categories": [
+            2
+        ]
+    }
+
+
+]

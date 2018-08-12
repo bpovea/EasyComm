@@ -3,17 +3,55 @@ from oscarapi.serializers import ProductLinkSerializer
 from rest_framework import generics
 from oscar.core.loading import get_class, get_model
 from oscarapi import serializers
-from EasyCommAPI.serializers import product_detail_serializer
+from EasyCommAPI.serializers import *
 from rest_framework.views import APIView
+
+from rest_framework.permissions import IsAdminUser
 
 Selector = get_class('partner.strategy', 'Selector')
 
 __all__ = (
     'ProductList', 'ProductDetail',
+    'products_class','products_categories',
 )
 
 Product = get_model('catalogue', 'Product')
+ProductClass = get_model('catalogue', 'ProductClass')
+ProductCategory = get_model('catalogue', 'ProductCategory')
 
+class products_categories(APIView):
+    permission_classes = (IsAdminUser,)
+    """
+    Lista todas los categorias de productos.
+    """
+    def get(self, request, format=None):
+        categorias = ProductCategory.objects.all()
+        serializer = categoria_productos(categorias, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request, format=None):
+        serializer = categoria_productos(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class products_class(APIView):
+    permission_classes = (IsAdminUser,)
+    """
+    Lista todas los clases de productos.
+    """
+    def get(self, request, format=None):
+        categorias = ProductClass.objects.all()
+        serializer = clase_productos(categorias, many=True)
+        return Response(serializer.data)
+    
+    def post(self, request, format=None):
+        serializer = clase_productos(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
@@ -43,8 +81,7 @@ class ProductList(generics.ListAPIView):
 
 class ProductDetail(generics.RetrieveAPIView):
     queryset = Product.objects.all()
-    serializer_class = serializers.ProductSerializer
-
+    serializer_class = ProductSerializer
 
 
 class producto_detalle(APIView):

@@ -16,7 +16,6 @@ Including another URLconf
 from django.urls import include, path
 from django.conf.urls import url
 from django.contrib import admin
-from oscar.app import application
 from . import views
 from EasyCommAPI.apps import application as api
 from oscar.app import application as oscar
@@ -39,6 +38,7 @@ urlpatterns = [
 
     url(r'faqs_load/', views.faqs_load, name='faqs_load'),
 ]
+
 
 
 

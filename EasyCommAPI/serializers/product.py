@@ -19,6 +19,16 @@ class stock_records(serializers.ModelSerializer):
         model = StockRecord
         fields = "__all__"
 
+class categoria_productos(serializers.ModelSerializer):
+    class Meta:
+        model = ProductCategory
+        fields = "__all__"
+
+class clase_productos(serializers.ModelSerializer):
+    class Meta:
+        model = ProductClass
+        fields = "__all__"
+
 class producto_imagen(serializers.ModelSerializer):
     class Meta:
         model = ProductImage

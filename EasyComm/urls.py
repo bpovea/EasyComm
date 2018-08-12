@@ -18,7 +18,8 @@ from django.conf.urls import url
 from django.contrib import admin
 from oscar.app import application
 from . import views
-from oscarapi.app import application as api
+from EasyCommAPI.apps import application as api
+from oscar.app import application as oscar
 
 urlpatterns = [
     url(r'^i18n/', include('django.conf.urls.i18n')),
@@ -27,9 +28,9 @@ urlpatterns = [
     # Nonetheless, it's often useful for debugging.
     url(r'^admin/', admin.site.urls),
 
-    url(r'', application.urls),
+    #url(r'', application.urls),
     url(r'^api/', api.urls),
-
+    url(r'', oscar.urls),
 
     url(r'home/',views.home,name = "home"),
     url(r'about_us/',views.about_us,name = "about_us"),
@@ -38,4 +39,6 @@ urlpatterns = [
 
     url(r'faqs_load/', views.faqs_load, name='faqs_load'),
 ]
+
+
 

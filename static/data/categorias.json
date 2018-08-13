@@ -1,0 +1,19 @@
+[
+	{
+		"path" :  "005",
+		"depth": 1,
+		"numchild" :0 ,
+		"name":"limpieza oficina", 
+		"description":"<p>productos para uso profesional.</p>",
+		"image" :"categorias/limpieza_oficina.jpg",
+		"slug":"limpieza-oficina"
+	},{
+		"path" :  "006",
+		"depth": 1,
+		"numchild" :0 ,
+		"description":"<p>productos para uso del hogar.</p>",
+		"image" :"categorias/limpieza_hogar.jpg", 
+		"name" :  "limpieza hogar",
+		"slug": "limpieza-hogar"
+	}
+]

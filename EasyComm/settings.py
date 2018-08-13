@@ -47,12 +47,16 @@ INSTALLED_APPS = [
     'django.contrib.flatpages',
     'compressor',
     'rest_framework',
-    'oscarapi',
     'widget_tweaks',
     'EasyComm_apps.help',
+    "EasyCommAPI",
 ] + get_core_apps([
     'EasyComm_apps.order',
     'EasyComm_apps.address',
+    'EasyComm_apps.catalogue',
+    # dashboard applications
+    'EasyComm_apps.dashboard',
+    'EasyComm_apps.dashboard.reports',
     ])
 
 SITE_ID = 1
@@ -132,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-EC'
 
 TIME_ZONE = 'UTC'
 
@@ -148,6 +152,9 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/apps')
+MEDIA_URL = '/static/apps/'
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
@@ -178,3 +185,6 @@ OSCAR_ORDER_STATUS_PIPELINE = {
 
 OSCAR_SHOP_NAME = 'EasyComm'
 OSCAR_SHOP_TAGLINE = ''
+
+OSCAR_DEFAULT_CURRENCY = 'DOLLAR'
+OSCAR_CURRENCY_FORMAT='DOLLAR'

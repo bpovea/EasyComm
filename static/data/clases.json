@@ -1,0 +1,14 @@
+[
+	{
+		"name" :  "limpieza oficina",
+		"slug": "limpieza-oficina",
+		"requires_shipping":1,
+		"track_stock":1
+	},
+	{
+		"name" :  "limpieza hogar",
+		"slug": "limpieza-hogar",
+		"requires_shipping":1,
+		"track_stock":1
+	}
+]

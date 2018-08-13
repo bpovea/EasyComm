@@ -26,7 +26,7 @@
 -- VALUES("","Maria","Yagual","data de villamil","km 9 1/2 via a data de posorja","Data de Villamil","Playas","Guayas","EC090104","data de villamil km 9 1/2 via a posorja Data de Villamil Playas Guayas EC090104 Republic of Ecuador","EC",4);
 
 
-catalogue_product
-catalogue_productcategory
-catalogue_productimage
-partner_stockrecord
+-- catalogue_product
+-- catalogue_productcategory
+-- catalogue_productimage
+-- partner_stockrecord

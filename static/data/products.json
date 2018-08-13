@@ -1,0 +1,44 @@
+[
+    {
+        "images": [
+            {
+                "original": "productos/000000001.jpg",
+                "caption": "",
+                "display_order": 0,
+                "date_created": "2018-08-12T03:19:52.024359Z",
+                "product": 1
+            }
+        ],
+        "stockrecords": [
+            {
+                "partner_sku": "0000012",
+                "price_currency": "DOLLAR",
+                "price_excl_tax": "520.00",
+                "price_retail": "20.00",
+                "cost_price": "560.00",
+                "num_in_stock": 30,
+                "num_allocated": null,
+                "low_stock_threshold": 2,
+                "date_created": "2018-08-12T04:38:00.291003Z",
+                "date_updated": "2018-08-12T04:38:00.291122Z",
+                "partner": 3,
+                "product": 1
+            }
+        ],
+        "categories": [
+            2,3
+        ],
+        "structure": "standalone",
+        "upc": "000000002",
+        "title": "2017 ASUS 15.6\" Touchscreen Laptop PC",
+        "slug": "2017-asus-156-touchscreen-laptop-pc",
+        "description": "<h1 id=\"title\" class=\"a-size-large a-spacing-none\"><span id=\"productTitle\" class=\"a-size-large\">2017 ASUS 15.6\" Touchscreen Laptop PC, Intel Core i5-7200U, 8GB DDR4, 2TB HDD, Intel HD Graphics 620, 802.11ac, Bluetooth, DVD RW, USB 3.1, HDMI, Webcam, Windows 10 Home, Silver </span></h1>",
+        "rating": null,
+        "date_created": "2018-08-12T03:17:37.874101Z",
+        "date_updated": "2018-08-12T04:38:00.212792Z",
+        "is_discountable": true,
+        "parent": null,
+        "product_class": 3
+        
+    }
+]

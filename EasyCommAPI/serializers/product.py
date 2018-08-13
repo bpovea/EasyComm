@@ -5,6 +5,7 @@ from oscarapi.serializers import *
 
 Product = get_model('catalogue', 'Product')
 ProductClass = get_model('catalogue', 'ProductClass')
+Category = get_model('catalogue', 'Category')
 ProductCategory = get_model('catalogue', 'ProductCategory')
 ProductAttribute = get_model('catalogue', 'ProductAttribute')
 ProductAttributeValue = get_model('catalogue', 'ProductAttributeValue')
@@ -21,7 +22,7 @@ class stock_records(serializers.ModelSerializer):
 
 class categoria_productos(serializers.ModelSerializer):
     class Meta:
-        model = ProductCategory
+        model = Category
         fields = "__all__"
 
 class clase_productos(serializers.ModelSerializer):
@@ -32,11 +33,9 @@ class clase_productos(serializers.ModelSerializer):
 class producto_imagen(serializers.ModelSerializer):
     class Meta:
         model = ProductImage
-        fields = "__all__"
+        exclude = ("product",) 
 
 class product_detail_serializer(serializers.ModelSerializer):
-    images = producto_imagen(many=True)
-    stockrecords = stock_records(many=True)
     class Meta:
         model = Product
-        fields = "__all__"
+        exclude = ("attributes","product_options","recommended_products",'categories')    

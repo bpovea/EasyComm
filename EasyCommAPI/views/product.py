@@ -5,31 +5,32 @@ from oscar.core.loading import get_class, get_model
 from oscarapi import serializers
 from EasyCommAPI.serializers import *
 from rest_framework.views import APIView
-
+from rest_framework import status
 from rest_framework.permissions import IsAdminUser
+
 
 Selector = get_class('partner.strategy', 'Selector')
 
 __all__ = (
     'ProductList', 'ProductDetail',
-    'products_class','products_categories',
+    'products_class','products_categories','category_details',
 )
 
 Product = get_model('catalogue', 'Product')
 ProductClass = get_model('catalogue', 'ProductClass')
-ProductCategory = get_model('catalogue', 'ProductCategory')
+Category = get_model('catalogue', 'Category')
 
 class products_categories(APIView):
-    permission_classes = (IsAdminUser,)
     """
     Lista todas los categorias de productos.
     """
     def get(self, request, format=None):
-        categorias = ProductCategory.objects.all()
+        categorias = Category.objects.all()
         serializer = categoria_productos(categorias, many=True)
         return Response(serializer.data)
     
     def post(self, request, format=None):
+        permission_classes = (IsAdminUser,)
         serializer = categoria_productos(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -37,7 +38,6 @@ class products_categories(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class products_class(APIView):
-    permission_classes = (IsAdminUser,)
     """
     Lista todas los clases de productos.
     """
@@ -47,6 +47,7 @@ class products_class(APIView):
         return Response(serializer.data)
     
     def post(self, request, format=None):
+        permission_classes = (IsAdminUser,)
         serializer = clase_productos(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -55,8 +56,7 @@ class products_class(APIView):
 
 class ProductList(generics.ListAPIView):
     queryset = Product.objects.all()
-    serializer_class = product_detail_serializer
-    
+    serializer_class = product_detail_serializer #ProductLinkSerializer
     
     def get_queryset(self):
         """
@@ -113,3 +113,17 @@ class producto_detalle(APIView):
         usuario = self.get_object(pk)
         usuario.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class category_details(APIView):
+
+    def get_object(self, pk):
+        try:
+            return Category.objects.get(pk=pk)
+        except Category.DoesNotExist:
+            raise Http404
+
+    def get(self, request, pk, format=None):
+        category = self.get_object(pk)
+        serializer = categoria_productos(category)
+        return Response(serializer.data)

@@ -24,8 +24,9 @@ function loadQuestionsAnswer(json) {
         $('#accordion').append(elemento);
 
         $('#list-preguntas-comunes').append($('<a class="list-group-item list-group-item-action " data-toggle="collapse" data-target="#collapse'+i+'" id="list-pregunta'+i+'-list" data-toggle="list" href="#list-pregunta'+i+'" role="tab" >'+json.preguntas[i].pregunta+'</a>'));
-        
+
     }
+
     
     sortedData = sorted(json);
     for (i = 0; i < sortedData.length; i++) {

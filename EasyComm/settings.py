@@ -49,9 +49,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'oscarapi',
     'widget_tweaks',
+    'EasyComm_apps.help',
 ] + get_core_apps([
     'EasyComm_apps.order',
-    'EasyComm_apps.address'
+    'EasyComm_apps.address',
     ])
 
 SITE_ID = 1

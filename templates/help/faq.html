@@ -1,0 +1,152 @@
+{% extends "EasyComm/base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+	Acerca de nosotros
+{% endblock %}
+		<!-- content -->
+{% block content %}	
+		<br>
+		<div class="contenedor">
+  			<div class="row ">
+				<div class="col-md-12" >
+					<form class="form-inline">
+		      			<input class="form-control col-9 col-sm-10 col-md-11 mr-2" type="search" placeholder="pregunta/tema de interes">
+		      			<button class="btn btn-outline-success " type="submit"><i class="fa fa-search"></i></button>
+		    		</form>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-12 col-sm-7 col-md-3">
+					<fieldset >
+						<legend>Preguntas Comunes:</legend>
+					    <div class="list-group" id="list-preguntas-comunes" role="tablist">
+					      
+					    </div>
+				    </fieldset>
+				    <br>
+				    <fieldset >
+						<legend>Preguntas Frecuentes:</legend>
+						<div class="list-group" id="list-preguntas-frecuentes" role="tablist">
+					    </div>
+				    </fieldset>
+				</div>
+				
+				<div class="col-sm-5 col-md-9 mt-3">
+					<div class="row m-1">
+						<div class="col-sm-12 col-md-4 ">
+						    <div class="thumbnail p-2">
+						      <a href="">
+						        <img class="faq-image mx-auto d-block" src="{% static 'oscar/img/comunity.jpg' %}" alt="Comunidad">
+						        <div class="caption text-center">
+						          <h3>Comunidad</h3>
+						        </div>
+						      </a>
+						    </div>
+						</div>
+						<div class="col-sm-12 col-md-4">
+						    <div class="thumbnail p-2">
+						      <a href="">
+						        <img class="faq-image mx-auto d-block" src="{% static 'oscar/img/more_visited.jpg' %}"  alt="Más visitados">
+						        <div class="caption text-center">
+						          <h3>Más visitados</h3>
+						        </div>
+						      </a>
+						    </div>
+						</div>
+						<div class="col-sm-12 col-md-4">
+						    <div class="thumbnail p-2">
+						      <a href="">
+						        <img class="faq-image mx-auto d-block" src="{% static 'oscar/img/categories.jpg' %}" alt="Categorias">
+						        <div class="caption text-center">
+						          <h3>Categorias</h3>
+						        </div>
+						      </a>
+						    </div>
+						</div>
+						<div class="col-sm-12 ">
+							<!-- <div class="row">
+								<nav >
+								  <ul class="pagination flex-wrap ">
+								  	<li class="page-item active"><a class="page-link" href="#">TODOS</a></li>
+								    <li class="page-item"><a class="page-link" href="#">A</a></li>
+								    <li class="page-item"><a class="page-link" href="#">B</a></li>
+								    <li class="page-item"><a class="page-link" href="#">C</a></li>
+								    <li class="page-item"><a class="page-link" href="#">D</a></li>
+								    <li class="page-item"><a class="page-link" href="#">E</a></li>
+								    <li class="page-item"><a class="page-link" href="#">F</a></li>
+								    <li class="page-item"><a class="page-link" href="#">G</a></li>
+								    <li class="page-item"><a class="page-link" href="#">H</a></li>
+								    <li class="page-item"><a class="page-link" href="#">I</a></li>
+								    <li class="page-item"><a class="page-link" href="#">J</a></li>
+								    <li class="page-item"><a class="page-link" href="#">K</a></li>
+								    <li class="page-item"><a class="page-link" href="#">L</a></li>
+								    <li class="page-item"><a class="page-link" href="#">M</a></li>
+								    <li class="page-item"><a class="page-link" href="#">N</a></li>
+								    <li class="page-item"><a class="page-link" href="#">Ñ</a></li>
+								    <li class="page-item"><a class="page-link" href="#">O</a></li>
+								    <li class="page-item"><a class="page-link" href="#">P</a></li>
+								    <li class="page-item"><a class="page-link" href="#">Q</a></li>
+								    <li class="page-item"><a class="page-link" href="#">R</a></li>
+								    <li class="page-item"><a class="page-link" href="#">S</a></li>
+								    <li class="page-item"><a class="page-link" href="#">T</a></li>
+								    <li class="page-item"><a class="page-link" href="#">U</a></li>
+								    <li class="page-item"><a class="page-link" href="#">V</a></li>
+								    <li class="page-item"><a class="page-link" href="#">W</a></li>
+								    <li class="page-item"><a class="page-link" href="#">X</a></li>
+								    <li class="page-item"><a class="page-link" href="#">Y</a></li>
+								    <li class="page-item"><a class="page-link" href="#">Z</a></li>
+								  </ul>
+								</nav>
+							</div> -->
+							<div class="row">
+								<div class="col-12 col-md-12" id="accordion">
+									
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+					
+				</div>
+			</div>
+
+		</div>
+
+		<!-- end content -->
+
+		<hr>
+{% endblock %}
+
+{% block scripts %}
+	<!-- <script src="{% static 'oscar/js/faqs.js' %}"></script> -->
+	<script type="text/javascript" src="{% static 'oscar/js/underscore.js' %}"></script>
+	<script type="text/javascript" src="{% static 'oscar/js/backbone.js' %}"></script>
+	<script type="text/javascript" src="{% static 'EasyComm/backbone/config.js' %}"></script>
+	<script type="text/javascript" src="{% static 'EasyComm/backbone/models.js' %}"></script>
+	<script type="text/javascript" src="{% static 'EasyComm/backbone/collections.js' %}"></script>
+	<script type="text/javascript" src="{% static 'EasyComm/backbone/views.js' %}"></script>
+	<script type="text/javascript" src="{% static 'EasyComm/help/faq.js' %}" defer></script>
+	<script type="text/template" id='faq_template'>
+		<% var i = 0 %>
+		<% console.log(faqs) %>
+        <% _.each(faqs, function(faq){ %>
+			<div class="card faq"> 
+				<div class="card-header" id="heading0">
+					<a class="mb-<%= i %> collapsed" data-toggle="collapse" data-target="#collapse<%= i %>" aria-expanded="false">
+						<%= faq.get('question') %>
+					</a>
+				</div>
+				<div id="collapse<%= i %>" class="collapse" data-parent="#accordion" style=""> 
+					<div class="card-body">
+						<%= faq.get('answer') %>
+					</div>
+				</div>
+			</div>
+			<% i++ %>
+		<% }); %>
+
+	</script>
+{% endblock %}

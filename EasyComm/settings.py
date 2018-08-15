@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'EasyComm_apps.help',
     "EasyCommAPI",
+    'django_seed',
 ] + get_core_apps([
     'EasyComm_apps.order',
     'EasyComm_apps.address',

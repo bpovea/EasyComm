@@ -1,3 +1,14 @@
+//Models   
+var Faq = Backbone.Model.extend({
+  urlRoot: siteRoot+'help/api/faqs/',
+  fileAttribute: 'photo'
+});
+
+//collections
+var Faqs = Backbone.Collection.extend({
+	url: siteRoot+'help/api/faqs/'
+});
+
 //views
 var FaqsView = Backbone.View.extend({
   // el:"#faqs-here",

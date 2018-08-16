@@ -19,7 +19,6 @@ pbr==4.1.0
 phonenumbers==8.9.10
 phonenumberslite==8.9.10
 Pillow==5.2.0
-pkg-resources==0.0.0
 purl==1.4
 pycountry==18.5.26
 python-dateutil==2.7.3
@@ -30,3 +29,5 @@ six==1.11.0
 sorl-thumbnail==12.4.1
 text-unidecode==1.2
 Unidecode==1.0.22
+requests==2.19.1
+django-cors-headers==2.4.0

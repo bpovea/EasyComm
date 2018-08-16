@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'EasyComm_apps.help',
     "EasyCommAPI",
     'django_seed',
+    'corsheaders',
 ] + get_core_apps([
     'EasyComm_apps.order',
     'EasyComm_apps.address',
@@ -62,7 +63,15 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000',
+    '127.0.0.1:8000',
+)
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -72,6 +81,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'oscar.apps.basket.middleware.BasketMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+
 ]
 
 ROOT_URLCONF = 'EasyComm.urls'

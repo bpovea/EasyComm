@@ -6,11 +6,11 @@
 *.pyc
 __pycache__/
 ./local_settings.py
-./db.sqlite3
-./media
+db.sqlite3
+media
 
 # lista de virtualenv
-easyComm/
+enveasyComm/
 
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/

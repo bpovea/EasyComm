@@ -32,7 +32,7 @@ def cargar_productos(url,session,file):
 		stock = data.pop("stockrecords")
 		data['categories'] = []
 		for category in categories:
-			response = session.get('http://127.0.0.1:8001/api/products-categories/' + str(category) + '/')
+			response = session.get('http://127.0.0.1:8000/api/products-categories/' + str(category) + '/')
 			data['categories'].append(json.loads(response.content))
 		for image in data['images']:
 			image['original'] = open(image['original'], 'rb')
@@ -40,6 +40,6 @@ def cargar_productos(url,session,file):
 		response = session.post(url, data=data)
 		print(response.content)
 	file.close()
-#load_clases('http://localhost:8001/api/products-class/',session,"clases.json")
-#cargar_categorias('http://localhost:8001/api/products-categories/',session,"categorias.json")
-cargar_productos('http://localhost:8001/api/products/',session,"products.json")
+load_clases('http://localhost:8000/api/products-class/',session,"clases.json")
+cargar_categorias('http://localhost:8000/api/products-categories/',session,"categorias.json")
+# no funciona aun cargar_productos('http://localhost:8000/api/products/',session,"products.json")

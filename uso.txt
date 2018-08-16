@@ -1,6 +1,13 @@
-pythonanage.py createsuperuser --username mauricio --email mdleiton@espol.edu.ec 
+python manage.py createsuperuser --username mauricio --email mdleiton@espol.edu.ec 
 # contrasena a1234567890
 pip install -r requirements.txt
 
-ejecutar .sql de registros
-sqlite3 AsignaYasegura.sqlite3 < registros.sql
+cargar datos
+sqlite3 db.sqlite3 < fixtures/data/productos.sql
+python fixtures/data/consumiendoAPI.py
+
+#solucionar problemas de creacion de algunas tablas como faq
+python manage.py migrate --run-syncdb
+
+con django-seed
+python fixtures/data/data_django_seed.py

@@ -10,4 +10,4 @@ python fixtures/data/consumiendoAPI.py
 python manage.py migrate --run-syncdb
 
 con django-seed
-python fixtures/data/data_django_seed.py
+python data_django_seed.py

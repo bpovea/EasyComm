@@ -5,12 +5,14 @@ import random
 
 from django_seed import Seed
 from django.conf import settings
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'EasyComm.settings')
+django.setup()
+
 from oscar.core.loading import get_class, get_model
 from EasyComm_apps.help import models
 from oscar.core.compat import (get_user_model)
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'EasyComm.settings')
-django.setup()
 
 User = get_user_model()
 Product = get_model('catalogue', 'product')
@@ -36,14 +38,14 @@ def acortar_nombres():
 		product_clas.name = product_clas.name[:15]
 		product_clas.save()
 
-#seeder = Seed.seeder()
+seeder = Seed.seeder()
 
 cantidad = 15
-id_fk = 10,
+id_fk = 10
 id_images = [1,2,3,4,5]
 #seeder.add_entity(models.Faq, cantidad)
 #seeder.add_entity(product_class, cantidad)
-#seeder.add_entity(category_class, cantidad,{'image':  'categories/limpieza_oficina.jpg',"depth": 1,"numchild" :0 })
+#seeder.add_entity(category_class, cantidad,{'image':  'categories/' + str(random.randint(1,len(id_images))) +.jpg',"depth": 1,"numchild" :0 })
 #seeder.add_entity(Product, cantidad,{'product_class':    lambda x: product_class.objects.get(pk=random.randint(1,id_fk)),'parent':lambda x: None})
 
 #seeder.add_entity(partner_class,cantidad)
@@ -52,12 +54,12 @@ id_images = [1,2,3,4,5]
 
 #seeder.add_entity(product_category_class, cantidad,{'product':    lambda x: Product.objects.get(pk=random.randint(1,id_fk)),'category':lambda x: category_class.objects.get(pk=random.randint(1,id_fk))})
 
-#seeder.add_entity(product_image,cantidad,{'product':lambda x: Product.objects.get(pk=random.randint(1,id_fk)),'original': 'images/products/2018/08/carousel1.jpg'})
+seeder.add_entity(product_image,cantidad,{'product':lambda x: Product.objects.get(pk=random.randint(1,id_fk)),'original': lambda x:'images/products/2018/08/' + str(random.randint(1,len(id_images))) +'.jpg'})
 #seeder.add_entity(partner_stock,cantidad,{'product':lambda x: Product.objects.get(pk=random.randint(1,id_fk)),"price_currency": "DOLLAR",'partner': lambda x: partner_class.objects.get(pk=random.randint(1,id_fk)),"num_in_stock": random.randint(0,30)})
 
 #seeder.add_entity(User,cantidad,{'is_staff':random.randint(0,1),'is_active':True,"password": 'a1234567890'})
 
-#pk = seeder.execute()
+pk = seeder.execute()
 
 #acortar_nombres()
 #cambiar_contrasenas()

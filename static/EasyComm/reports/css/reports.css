@@ -1,0 +1,18 @@
+/* graficos estadisticos */
+rect {
+    stroke:rgba(36,175,127,1.00);
+    stroke-width: 3;
+    fill: rgba(66,210,127,1.00) ;
+}
+
+rect:hover {
+    fill: rgba(105,135,147,1.00) ;
+    stroke:rgba(105,135,147,1.00);
+}
+
+.barraMensaje {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 1px 4px;
+    color: rgba(255,255,255,1.00);  
+}

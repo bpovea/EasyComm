@@ -35,6 +35,8 @@ def PROTECTED_APIS(r, f):
 
         ('products-categories', reverse('products-category-list', request=r, format=f)),
         ('products-class', reverse('products-class-list', request=r, format=f)),
+
+        ('report-products', reverse('report-products', request=r, format=f)),
     ]
 
 @api_view(('GET',))

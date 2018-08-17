@@ -1,5 +1,6 @@
 {% extends 'dashboard/layout.html' %}
 {% load i18n %}
+{% load staticfiles %}
 
 {% block body_class %}{{ block.super }} reports{% endblock %}
 {% block title %}
@@ -37,8 +38,17 @@
             <h3><i class="icon-bar-chart icon-large"></i>{{ description }}</h3>
         </div>
     {% endif %}
-
+    <div id="statistics" class="tab-pane fade scrollable col-md-12" width="100%">
+        <svg id="graph" class="rounded mx-auto d-block border"></svg>
+                        
+    </div>
     {% block report %}
+    {% endblock %}
+
+    {% block reportscript %}
+
+        <script src="{% static 'EasyComm/reports/d3.js' %}"></script>
+        <script src="{% static 'EasyComm/reports/d3_tip.js' %}"></script>
     {% endblock %}
 
 {% endblock dashboard_content %}

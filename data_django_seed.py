@@ -39,8 +39,8 @@ def acortar_nombres():
 #seeder = Seed.seeder()
 
 cantidad = 15
-id_fk = 10
-
+id_fk = 10,
+id_images = [1,2,3,4,5]
 #seeder.add_entity(models.Faq, cantidad)
 #seeder.add_entity(product_class, cantidad)
 #seeder.add_entity(category_class, cantidad,{'image':  'categories/limpieza_oficina.jpg',"depth": 1,"numchild" :0 })
@@ -61,3 +61,6 @@ id_fk = 10
 
 #acortar_nombres()
 #cambiar_contrasenas()
+
+
+# agregar imagenes aleatorias

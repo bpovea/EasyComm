@@ -1,6 +1,7 @@
 
 function renderGraph(json){
-	var config = { columnWidth: 100, columnHeight: 250, columnGap: 50, padding: 80};
+
+	var config = { columnWidth: 50, columnHeight: 250, columnGap: 50, padding: 80};
     var datos = json;
     var NUM_COLUMNAS = datos.length;
     config.width = NUM_COLUMNAS * (config.columnWidth + config.columnGap) + (2 * config.padding);

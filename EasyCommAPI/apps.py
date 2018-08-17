@@ -12,7 +12,7 @@ class MyRESTApiApplication(RESTApiApplication):
         	url(r'^products-categories/(?P<pk>[0-9]+)/$',views.category_details.as_view(), name='products-category-details'),
         	url(r'^products-class/$',views.products_class.as_view(), name='products-class-list'),
 
-
+            url(r'^profile/(?P<pk>[0-9]+)/$',views.profile_details.as_view(), name='profile-details'),
 
         	url(r'^report-products/$',views.report_products.as_view(), name='report-products'),
         ]

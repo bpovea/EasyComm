@@ -1,29 +1,16 @@
 
-function incrementar(){
-    $("#qty").val(parseInt($("#qty").val())+1)
-}
-
-function decrementar(){
-    if(parseInt($("qty").val()) > 1){
-        $("#qty").val(parseInt($("#qty").val())-1)
-    }
-    else{
-        createalert('Minimo es 1 producto')
-    }
-}
-
 function renderGraph(json){
-	var config = { columnWidth: 35, columnHeight: 250, columnGap: 10, padding: 80};
-    var datos = json[0].ventas;
-    
+
+	var config = { columnWidth: 50, columnHeight: 250, columnGap: 50, padding: 80};
+    var datos = json;
     var NUM_COLUMNAS = datos.length;
     config.width = NUM_COLUMNAS * (config.columnWidth + config.columnGap) + (2 * config.padding);
     config.height = config.columnHeight + 2 * config.padding;
-    var unidades_vendidas_max = d3.max(datos, function(d) { return +d.unidadesVendidas; });
+    var unidades_vendidas_max = d3.max(datos, function(d) { return +d.num_views; });
     
     var x = d3.scaleBand()
         .range([0, config.width - 2 * config.padding])
-        .domain(datos.map(function(d) { return d.mes; }));
+        .domain(datos.map(function(d) { return d.product.title; }));
     var y = d3.scaleLinear()
         .range([0, config.columnHeight])
         .domain([0, unidades_vendidas_max]);
@@ -35,7 +22,7 @@ function renderGraph(json){
     var tooltip = d3.tip()
         .attr('class', 'barraMensaje')
         .html(function(d) {
-            return "<strong>" + d.mes + "</strong><br> Unidades vendidas: " +d.unidadesVendidas;
+            return "<strong>" + d.product.title + "</strong><br> Unidades vendidas: " +d.num_views;
         });
     var svg = d3.select("svg")
         .attr("width", config.width)
@@ -56,43 +43,18 @@ function renderGraph(json){
         .data(datos)
         .enter().append("rect")
         .attr("width", config.columnWidth)
-        .attr("x", function(d,i) { return config.padding + x(d.mes) })
-        .attr("y", function(d,i) { return config.padding + config.columnHeight - y(d.unidadesVendidas) })
-        .attr("height", function(d,i) { return y(d.unidadesVendidas) })
+        .attr("x", function(d,i) { return config.padding + x(d.product.title) })
+        .attr("y", function(d,i) { return config.padding + config.columnHeight - y(d.num_views) })
+        .attr("height", function(d,i) { return y(d.num_views) })
             .on('mouseover', tooltip.show)
             .on('mouseout', tooltip.hide)
 }
 
 $(document).ready(function(){
-	var oldsrc;
-	$('#mini-img > img').mouseenter(function(ev){
-		oldsrc = $('#main-img').attr('src')
-		$('#main-img').attr('src',$(ev.currentTarget).attr('src'))
-	}).mouseleave(function(ev){
-		$('#main-img').attr('src',oldsrc)
-	})
-
-	$('#mini-img > img').click(function (ev) {
-		oldsrc = $(ev.currentTarget).attr('src')
-		$('#main-img').attr('src',$(ev.currentTarget).attr('src'))
-	})
-
-	$('#mini-img-mobile > img').mouseenter(function(ev){
-		oldsrc = $('#main-img').attr('src')
-		$('#main-img').attr('src',$(ev.currentTarget).attr('src'))
-	}).mouseleave(function(ev){
-		$('#main-img').attr('src',oldsrc)
-	})
-
-	$('#mini-img-mobile > img').click(function (ev) {
-		oldsrc = $(ev.currentTarget).attr('src')
-		$('#main-img').attr('src',$(ev.currentTarget).attr('src'))
-	})
-
 
 	/* grafico estadistico */
 	$.ajax({
-        url: "data/products.json",
+        url: "http://127.0.0.1:8000/api/report-products/",
         type:"GET",    
         dataType : 'json',
         success : renderGraph,

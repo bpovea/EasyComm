@@ -1,11 +1,12 @@
-
+function editarPerfil(){
+    $("#mostrarmodal").modal("show");
+    $(".modal-dialog").attr("style","height: 378px; z-index: 2;");
+}
 
 $(document).ready(function(){
-
-	console.log($('#userID').val());
     
     $.ajax({
-        url: "http://127.0.0.1:8000/api/profile/" + $('#userID').val(),
+        url: "http://127.0.0.1:8000/api/profile/" + $('#id').val(),
         type:"GET",    
         dataType : 'json',
         success : cargarProfile,
@@ -15,7 +16,6 @@ $(document).ready(function(){
     });
 	
 });
-
 
 function editarServicioDeUsuario(element){
     var crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
@@ -66,20 +66,19 @@ function eliminarServicioDeUsuario(element){
 
 
 function cargarProfile(data){
-    console.log(data);
+    //console.log(data);
     let htmlTablaProfile = '';
+
     htmlTablaProfile += '<tr>';
-    htmlTablaProfile +=    '<th>first name</td>';
-    htmlTablaProfile +=    '<td>'+data['first_name']+'</td>';
+    htmlTablaProfile +=    '<th>first name</td><td>'+data['first_name']+'</td>';
     htmlTablaProfile += '</tr>';
     htmlTablaProfile += '<tr>';
-    htmlTablaProfile +=    '<th>last name</td>';
-    htmlTablaProfile +=    '<td>'+data['last_name']+'</td>';
+    htmlTablaProfile +=    '<th>last name</td><td>'+data['last_name']+'</td>';
     htmlTablaProfile += '</tr>';
     htmlTablaProfile += '<tr>';
-    htmlTablaProfile +=    '<th>email</td>';
-    htmlTablaProfile +=    '<td>'+data['email']+'</td>';
+    htmlTablaProfile +=    '<th>email</td><td>'+data['email']+'</td>';
     htmlTablaProfile += '</tr>';
+
     $("#serviciosTBody").html(htmlTablaProfile);
 
 };

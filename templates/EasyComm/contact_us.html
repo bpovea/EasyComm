@@ -47,31 +47,32 @@
 	    </div>
 
 		<div class="col-sm-12 col-md-12 mt-2" >
-			<form>
+			<form method="post">
+                    {% csrf_token %}
                 <div class="form-row">
                     <div class="col-sm-12 col-md-6 form-group">
                         <label for="inputNombres">Nombres</label>
-                        <input type="text" class="form-control" id="inputNombres" required>
+                        <input type="text" name="nombre" class="form-control" id="inputNombres" required>
                     </div>
                     <div class="col-sm-12 col-md-6 form-group">
                         <label for="inputApellidos">Apellidos</label>
-                        <input type="text" class="form-control" id="inputApellidos" required>
+                        <input type="text" name="apellido" class="form-control" id="inputApellidos" required>
                     </div>
 				    <div class="col-sm-12 col-md-6 form-group">
 				      <label for="inputCorreo">Correo electrónico</label>
-				      <input type="email" class="form-control" id="inputCorreo" required>
+				      <input type="email" name="correo" class="form-control" id="inputCorreo" required>
 				    </div>
                     <div class="col-sm-6 col-md-3 form-group">
                       <label for="inputPais">País</label>
-                      <input type="text" class="form-control" id="inputPais" placeholder="Ecuador" required>
+                      <input type="text" name="pais" class="form-control" id="inputPais" placeholder="Ecuador" required>
                     </div>
                     <div class="col-sm-6 col-md-3 form-group">
                       <label for="inputCiudad">Ciudad</label>
-                      <input type="text" class="form-control" id="inputCiudad" placeholder="Guayaquil" required>
+                      <input type="text" name="ciudad" class="form-control" id="inputCiudad" placeholder="Guayaquil" required>
                     </div>
                     <div class="col-sm-12 col-md-12 form-group">
                       <label for="inputMensaje">Mensaje</label>
-                      <textarea class="form-control" id="inputMensaje" rows="3"></textarea>
+                      <textarea class="form-control" name="mensaje" id="inputMensaje" rows="3"></textarea>
                     </div>
                 </div>
                     <div class="row p-2">

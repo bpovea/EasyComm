@@ -56,10 +56,11 @@ INSTALLED_APPS = [
     'EasyComm_apps.order',
     'EasyComm_apps.address',
     'EasyComm_apps.catalogue',
+    'EasyComm_apps.customer',
     # dashboard applications
     'EasyComm_apps.dashboard',
     'EasyComm_apps.dashboard.reports',
-    'EasyComm_apps.customer',
+    
     ])
 
 SITE_ID = 1

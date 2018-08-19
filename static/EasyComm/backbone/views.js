@@ -23,8 +23,7 @@ var FaqsView = Backbone.View.extend({
         }));
       },
       error: function(vehicles, response){
-        hideloader();
-        createalert("Error, No se pueden cargar las FAQs.");
+        alert("Error, No se pueden cargar las FAQs.");
       }
     });
   },

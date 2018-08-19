@@ -53,9 +53,9 @@ class ReportGenerator(object):
         Filter results based that are within a (possibly open ended) daterange
         """
         # Nothing to do if we don't have a date field
+        
         if not self.date_range_field_name:
             return queryset
-
         # After the start date
         if self.start_date:
             start_datetime = timezone.make_aware(

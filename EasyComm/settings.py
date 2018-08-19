@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'EasyComm_apps.dashboard',
     'EasyComm_apps.dashboard.reports',
     'EasyComm_apps.customer',
+    'EasyComm_apps.checkout',
     ])
 
 SITE_ID = 1

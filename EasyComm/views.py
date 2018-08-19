@@ -1,5 +1,6 @@
 from django.shortcuts import render,render_to_response,get_object_or_404,redirect
 from django.http import JsonResponse
+from django.core.mail import send_mail
 import json
 from oscar.core.loading import get_class, get_model
 
@@ -15,7 +16,12 @@ def about_us(request):
 	return render(request,'../templates/EasyComm/about_us_g3.html')
 
 def contact_us(request):
-	return render(request,'../templates/EasyComm/contact_us.html')
+    if request.method == "POST":
+        subject = "Nuevo Contacto"
+        message = "Informacion de "+request.POST["nombre"]+" "+request.POST["apellido"]+"\n"+"Correo: "+request.POST["correo"]+" Pais: "+request.POST["pais"]+" Ciudad: "+request.POST["ciudad"]+"\n"+"Mensaje: "+request.POST["mensaje"]
+        list_mail=["stejorod@espol.edu.ec"]
+        send_mail(subject,message,request.POST["correo"],list_mail,fail_silently=False)
+    return render(request,'../templates/EasyComm/contact_us.html')
 
 def faqs(request):
 	return render(request,'../templates/EasyComm/faqs.html')

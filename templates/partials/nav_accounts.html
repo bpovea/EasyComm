@@ -1,6 +1,6 @@
 {% load i18n %}
 
-<div id="top_page" class="navbar navbar-default navbar-static-top accounts">
+<div id="top_page" class="navbar navbar-default navbar-static-top accounts" rol="navigation">
     {# This is used in mobile view #}
     <div class="navbar-header">
         <a class="btn btn-default navbar-toggle collapsed" data-toggle="collapse" data-target=".account-collapse">
@@ -10,67 +10,57 @@
         </a>
     </div>
 
-    <div class="navbar-collapse account-collapse collapse">
-        <div class="container-fluid">
-            {% block nav_account_languages %}
-            {% if LANGUAGES|length > 1 %}
-                <form id="language_selector" class="navbar-left navbar-form" action="{% url 'set_language' %}" method="post">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ language_neutral_url_path }}" />
-                    <div class="form-group">
-                        <select name="language" class="form-control">
-                            {% get_language_info_list for LANGUAGES as languages %}
-                            {% for language in languages %}
-                                <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE%} selected="selected"{% endif %}>
-                                    {{ language.name_local }}
-                                </option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <button class="btn btn-default" type="submit" data-loading-text="{% trans 'Submitting...' %}">{% trans "Go" %}</button>
-                </form>
-            {% endif %}
-            {% endblock %}
-            <ul class="nav navbar-nav navbar-left">
-                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="products.html">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="partners.html">Socios</a></li>
-                <li class="nav-item"><a class="nav-link" href="faqs.html">FAQs</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link" href="validaciones.html">Validaciones</a></li>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-                
-                {% if user.is_authenticated %}
-                {% block nav_account_navbar_authenticated %}
-                    <li class="nav-item">
-                        {% if num_unread_notifications > 0 %}
-                            {# If user has new notifications - we change account link to go to inbox #}
-                            <a class="nav-link" href="{% url 'customer:notifications-inbox' %}">
-                                <i class="icon-user"></i>
-                                {% trans "Account" %}
-                                <span class="label label-warning">{{ num_unread_notifications }}</span>
-                            </a>
-                        {% else %}
-                            <a class="nav-link" href="{% url 'customer:summary' %}"><i class="icon-user"></i> {% trans "Account" %}</a>
-                        {% endif %}
-                    </li>
-                    {% if user.is_staff or perms.partner.dashboard_access %}
-                        <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:index' %}"><i class="icon-list-ul"></i> {% trans "Dashboard" %}</a></li>
+    <div class=" collapse navbar-collapse account-collapse">
+        <ul class="nav navbar-nav navbar-center">
+            <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="/catalogue">Productos</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'partners' %}">Socios</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'help:faq' %}">FAQs</a></li>
+            <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contacto</a></li>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+            {% if user.is_authenticated %}
+            {% block nav_account_navbar_authenticated %}
+                <li class="nav-item">
+                    {% if num_unread_notifications > 0 %}
+                        {# If user has new notifications - we change account link to go to inbox #}
+                        <a class="nav-link" href="{% url 'customer:notifications-inbox' %}">
+                            <i class="icon-user"></i>
+                            {% trans "Account" %}
+                            <span class="label label-warning">{{ num_unread_notifications }}</span>
+                        </a>
+                    {% else %}
+                        <a class="nav-link" href="{% url 'customer:summary' %}"><!--i class="icon-user"></i--> {% trans "Account" %}</a>
                     {% endif %}
-                    <li class="nav-item"><a class="nav-link" id="logout_link" href="{% url 'customer:logout' %}"><i class="icon-signout"></i> {% trans "Logout" %}</a></li>
-                {% endblock %}
-                {% else %}
-                    <li class="nav-item"><a class="nav-link" id="login_link" href="{% url 'customer:login' %}"><i class="icon-signin"></i> {% trans "Login or register" %}</a></li>
+                </li>
+                {% if user.is_staff or perms.partner.dashboard_access %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'dashboard:index' %}"><!--i class="icon-list-ul"></i--> {% trans "Dashboard" %}</a></li>
                 {% endif %}
-            </ul>
-            <form class="navbar-form navbar-right" >
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Buscar">
-              </div>
-              
-              <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                    <li class="nav-item"><a class="nav-link" id="logout_link" href="{% url 'customer:logout' %}"><!--i class="icon-signout"--></i> {% trans "Logout" %}</a></li>
+                {% endblock %}
+            {% else %}
+                <li class="nav-item"><a class="nav-link" id="login_link" href="{% url 'customer:login' %}"><i class="icon-signin"></i> {% trans "Login or register" %}</a></li>
+            {% endif %}
+        </ul>
+        {% block nav_account_languages %}
+        {% if LANGUAGES|length > 1 %}
+            <form id="language_selector" class="navbar-left navbar-form" action="{% url 'set_language' %}" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ language_neutral_url_path }}" />
+                <div class="form-group">
+                    <select name="language" class="form-control">
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE%} selected="selected"{% endif %}>
+                                {{ language.name_local }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button class="btn btn-default" type="submit" data-loading-text="{% trans 'Submitting...' %}">{% trans "Go" %}</button>
             </form>
-        </div>
+        {% endif %}
+         {% endblock %}   
+        
     </div>
 </div>
 

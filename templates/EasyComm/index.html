@@ -57,14 +57,14 @@
 					</video>
 				<br>
 				<div >
-						<a href="">
+						<a href="/offers/">
 							<img" src="{% static 'oscar/img/promociones.jpg' %}" class="mx-auto d-block rounded image" alt="">
 					</a>
 				</div>
 
 				<br>
 				<div >
-						<a href="">
+						<a href="/offers/">
 							<img src="{% static 'oscar/img/promociones.jpg' %}" class=" mx-auto d-block rounded image" alt="">
 					</a>
 				</div>
@@ -85,66 +85,29 @@
 				<p>Ofreciendo servicios a centenas de empresas por más de 20 años</p>
 				<div class="row ">
 					<div class="col-md-12 text-center">
-						<a href="https://14308-ar.all.biz/">
-							<img src="{% static 'oscar/img/partners/partner1.jpg' %}" alt="Partner 1" class="img-thumbnail" >
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner2.jpg' %}" alt="Partner 2" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner3.jpg' %}" alt="Partner 3" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner4.jpg' %}" alt="Partner 4" class="img-thumbnail" >
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
-						</a>
-						<a href="https://14308-ar.all.biz/">
-							<img src="{% static 'oscar/img/partners/partner1.jpg' %}" alt="Partner 1" class="img-thumbnail" >
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner2.jpg' %}" alt="Partner 2" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner3.jpg' %}" alt="Partner 3" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner4.jpg' %}" alt="Partner 4" class="img-thumbnail" >
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
-						</a>
-						<a href="https://14308-ar.all.biz/">
-							<img src="{% static 'oscar/img/partners/partner1.jpg' %}" alt="Partner 1" class="img-thumbnail" >
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner2.jpg' %}" alt="Partner 2" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner3.jpg' %}" alt="Partner 3" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner4.jpg' %}" alt="Partner 4" class="img-thumbnail" >
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
-						</a>
-						<a href="">
-							<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
-						</a>
+						{% for partner in partners %}
+							<a href="https://14308-ar.all.biz/" target="_blank">
+								<img src="{% static 'oscar/img/partners/partner1.jpg' %}" alt="Partner 1" class="img-thumbnail" >
+							</a>
+							<a href="https://14308-ar.all.biz/" target="_blank">
+								<img src="{% static 'oscar/img/partners/partner2.jpg' %}" alt="Partner 2" class="img-thumbnail">
+							</a>
+							<a href="https://14308-ar.all.biz/" target="_blank">
+								<img src="{% static 'oscar/img/partners/partner2.jpg' %}" alt="Partner 2" class="img-thumbnail">
+							</a>
+							<a href="https://14308-ar.all.biz/" target="_blank">
+								<img src="{% static 'oscar/img/partners/partner3.jpg' %}" alt="Partner 3" class="img-thumbnail">
+							</a>
+							<a href="https://14308-ar.all.biz/" target="_blank">
+								<img src="{% static 'oscar/img/partners/partner4.jpg' %}" alt="Partner 4" class="img-thumbnail" >
+							</a>
+							<a href="https://14308-ar.all.biz/" target="_blank">
+								<img src="{% static 'oscar/img/partners/partner5.jpg' %}" alt="Partner 5" class="img-thumbnail">
+							</a>
+							<a href="https://14308-ar.all.biz/" target="_blank">
+								<img src="{% static 'oscar/img/partners/partner6.jpg' %}" alt="Partner 6" class="img-thumbnail">
+							</a>
+						{%endfor%}
 					</div>
 				</div>
 				<br>

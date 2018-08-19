@@ -15,6 +15,8 @@ class MyRESTApiApplication(RESTApiApplication):
             url(r'^profile/(?P<pk>[0-9]+)/$',views.profile_details.as_view(), name='profile-details'),
 
         	url(r'^report-products/$',views.report_products.as_view(), name='report-products'),
+            url(r'^report-orders/$',views.report_orders.as_view(), name='report-orders'),
+            url(r'^report-baskets-open/$',views.report_baskets_open.as_view(), name='report-baskets-open'),
         ]
 
         return urls + super(MyRESTApiApplication, self).get_urls()

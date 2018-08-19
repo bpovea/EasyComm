@@ -38,4 +38,4 @@ class producto_imagen(serializers.ModelSerializer):
 class product_detail_serializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        exclude = ("attributes","product_options","recommended_products",'categories')    
+        exclude = ("attributes","product_options","recommended_products",'categories',"slug","is_discountable","parent","date_created","date_updated")    

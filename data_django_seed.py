@@ -2,6 +2,8 @@ import os
 import sys
 import django
 import random
+import requests
+import json 
 
 from django_seed import Seed
 from django.conf import settings
@@ -24,6 +26,7 @@ country_class = get_model('address', 'Country')
 product_category_class = get_model('catalogue', 'ProductCategory')
 product_image = get_model('catalogue', 'ProductImage')
 partner_stock = get_model('partner', 'StockRecord')
+Basket = get_model('basket', 'Basket')
 
 def cambiar_contrasenas():
 	for user in User.objects.all():
@@ -38,7 +41,33 @@ def acortar_nombres():
 		product_clas.name = product_clas.name[:15]
 		product_clas.save()
 
-seeder = Seed.seeder()
+def cambiar_lineas_carrito():
+	users = User.objects.all()
+	for basket in Basket.objects.all():
+		basket.owner = users[random.randint(1,len(users)-1)]
+		basket.save()
+
+def agregar_carritos_usuarios():
+	users = User.objects.all()
+	for user in users:
+		session = requests.Session()
+		if not user.is_staff:
+			data = {"username": user.username,"password": 'a1234567890'}
+			response = session.post('http://localhost:8000/api/login/', data=data)
+			stock = partner_stock.objects.filter(num_in_stock__gte=0)
+			for i in range(random.randint(1,4)):
+				data = {'url':"http://localhost:8000/api/products/"+ str(stock[random.randint(0,len(stock)-1)].product.id)+ "/" ,"quantity":random.randint(1,2)}
+				response = session.post('http://127.0.0.1:8000/api/basket/add-product/',data=data)
+				print(response.content)
+
+	#seeder = Seed.seeder()
+	#
+	#seeder
+	#pk = seeder.execute()
+
+
+
+#seeder = Seed.seeder()
 
 cantidad = 15
 id_fk = 10
@@ -54,15 +83,15 @@ id_images = [1,2,3,4,5]
 
 #seeder.add_entity(product_category_class, cantidad,{'product':    lambda x: Product.objects.get(pk=random.randint(1,id_fk)),'category':lambda x: category_class.objects.get(pk=random.randint(1,id_fk))})
 
-seeder.add_entity(product_image,cantidad,{'product':lambda x: Product.objects.get(pk=random.randint(1,id_fk)),'original': lambda x:'images/products/2018/08/' + str(random.randint(1,len(id_images))) +'.jpg'})
-#seeder.add_entity(partner_stock,cantidad,{'product':lambda x: Product.objects.get(pk=random.randint(1,id_fk)),"price_currency": "DOLLAR",'partner': lambda x: partner_class.objects.get(pk=random.randint(1,id_fk)),"num_in_stock": random.randint(0,30)})
+#seeder.add_entity(product_image,cantidad,{'product':lambda x: Product.objects.get(pk=random.randint(1,id_fk)),'original': lambda x:'images/products/2018/08/' + str(random.randint(1,len(id_images))) +'.jpg'})
+#seeder.add_entity(partner_stock,cantidad*2,{'product':lambda x: Product.objects.get(pk=random.randint(1,id_fk)),"price_currency": "DOLLAR",'partner': lambda x: partner_class.objects.get(pk=random.randint(1,id_fk)),"num_in_stock":lambda x: random.randint(0,100)})
 
 #seeder.add_entity(User,cantidad,{'is_staff':random.randint(0,1),'is_active':True,"password": 'a1234567890'})
 
-pk = seeder.execute()
+#pk = seeder.execute()
 
 #acortar_nombres()
 #cambiar_contrasenas()
 
-
-# agregar imagenes aleatorias
+#agregar_carritos_usuarios()
+cambiar_lineas_carrito()

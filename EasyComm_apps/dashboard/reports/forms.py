@@ -12,8 +12,13 @@ class ReportForm(forms.Form):
     generators = GeneratorRepository().get_report_generators()
 
     type_choices = []
+
+    # para limitar los tipos de reportes a presentar
+    code = ['user_analytics','submitted_baskets','vouchers']
+    
     for generator in generators:
-        type_choices.append((generator.code, generator.description))
+        if generator.code not in code:
+            type_choices.append((generator.code, generator.description))
     report_type = forms.ChoiceField(widget=forms.Select(),
                                     choices=type_choices,
                                     label=_("Report Type"),

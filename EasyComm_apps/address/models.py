@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.core import exceptions
 
 from oscar.apps.address.abstract_models import AbstractUserAddress
 
@@ -69,7 +70,7 @@ class UserAddress(AbstractUserAddress):
             fields = [self.salutation] + fields
         fields = [f.strip() for f in fields if f]
         try:
-            fields.append(self.province.name+' - '+self.city.name)
+            fields.append(str(self.province)+' - '+str(self.city))
         except exceptions.ObjectDoesNotExist:
             pass
         return fields

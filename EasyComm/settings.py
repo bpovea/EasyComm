@@ -56,10 +56,11 @@ INSTALLED_APPS = [
     'EasyComm_apps.order',
     'EasyComm_apps.address',
     'EasyComm_apps.catalogue',
+    'EasyComm_apps.customer',
     # dashboard applications
     'EasyComm_apps.dashboard',
     'EasyComm_apps.dashboard.reports',
-    'EasyComm_apps.customer',
+    
     ])
 
 SITE_ID = 1
@@ -193,7 +194,13 @@ OSCAR_ORDER_STATUS_PIPELINE = {
     'Being processed': ('Processed', 'Cancelled',),
     'Cancelled': (),
 }
-
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'stejorod'
+EMAIL_MAIN = 'noreply@stejorod.com'
+EMAIL_HOST_PASSWORD = '03deenero'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+OSCAR_FROM_EMAIL = 'noreply@easycomm.com'
 
 OSCAR_SHOP_NAME = 'EasyComm'
 OSCAR_SHOP_TAGLINE = ''

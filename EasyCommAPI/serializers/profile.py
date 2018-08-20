@@ -8,4 +8,4 @@ User = get_user_model()
 class profile(serializers.ModelSerializer):
 	class Meta:
 		model = User
-		exclude = ("password","groups","user_permissions","is_staff",) 
+		exclude = ("password","groups","user_permissions","is_staff","username") 

@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.permissions import IsAdminUser
 from rest_framework.decorators import api_view
+from django.views.decorators.csrf import csrf_exempt
 
 Category = get_model('catalogue', 'Category')
 
@@ -27,13 +28,11 @@ class products_categories(APIView):
         return Response(serializer.data)
     
     def post(self, request, format=None):
-        permission_classes = (IsAdminUser,)
-        serializer = categorie_serializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+        category = Category.objects.create(path=request.POST['description'],depth=1,numchild=0,name= request.POST['name'],description=request.POST['description'])
+        id = category.id
+        category = category.save()
+        return Response("", status=status.HTTP_201_CREATED)
+        
 class category_details(APIView):
 
     def get_object(self, pk):
@@ -60,29 +59,3 @@ class category_details(APIView):
         category.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
-
-
-@api_view(['GET', 'PUT', 'DELETE'])
-def snippet_detail(request, pk):
-    """
-    Retrieve, update or delete a snippet instance.
-    """
-    try:
-        category = Category.objects.get(pk=pk)
-    except Category.DoesNotExist:
-        return Response(status=status.HTTP_404_NOT_FOUND)
-
-    if request.method == 'GET':
-        serializer = categoria_productos(category)
-        return Response(serializer.data)
-
-    elif request.method == 'PUT':
-        serializer = categoria_productos(category, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    elif request.method == 'DELETE':
-        category.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)

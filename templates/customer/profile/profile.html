@@ -12,8 +12,9 @@
 
         </tbody>
     </table>
+    {% csrf_token %}
     <div id="formForUpdate">
-      {% csrf_token %}
+      
       <form action="">
         
       </form>
@@ -21,7 +22,7 @@
     <!--a href="{% url 'customer:change-password' %}" class="btn btn-primary">{% trans 'Change password' %}</a-->
     <div id="profileBotones1">
       <a onclick="editarPerfil()" class="btn btn-primary">{% trans 'Edit profile' %}</a> 
-      <a id="delete_profile" href="{% url 'customer:profile-delete' %}" class="btn btn-danger">{% trans 'Delete profile' %}</a>
+      <a onclick="eliminarPerfil()"  class="btn btn-danger">{% trans 'Delete profile' %}</a>
     </div>
     <div id="profileBotones2">
       <a onclick="guardarPerfil()" class="btn btn-lg btn-primary" type="submit" data-loading-text="{% trans 'Saving...' %}">{% trans "Save" %}</a>

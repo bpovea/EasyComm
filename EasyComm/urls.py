@@ -20,7 +20,8 @@ urlpatterns = [
     url(r'partners/',views.partners,name = "partners"),
     url(r'categories/',views.categories,name = "categories"),
     
-
+    url(r'terms/',views.terms,name= "terms"),
+    url(r'terms_load/', views.terms_load, name='terms_load'),
     #  URL Byron
     #  Help -> Faqs
     url(r'^help/', include(('EasyComm_apps.help.urls','help'), namespace="help")),

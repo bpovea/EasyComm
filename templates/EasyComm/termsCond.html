@@ -1,0 +1,23 @@
+{% extends "EasyComm/base.html" %}
+{% load staticfiles %}
+
+{% block title %} 
+	Acerca de nosotros
+{% endblock %}
+		<!-- content -->
+{% block content %}	
+		<br>
+		<div class="contenedor">
+			<div class="col-md-11 col-sm-12">
+        		<h2>Terminos y Condiciones</h2>
+				<div class="col-12 col-md-12" id="accordion">
+								  	  
+				</div>
+        	</div>
+		</div>
+		<!-- end content -->
+{% endblock %}
+
+{% block scripts %}
+	<script src="{% static 'oscar/js/terms.js' %}"></script>
+{% endblock %}

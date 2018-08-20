@@ -1,0 +1,36 @@
+{	
+	"records": [
+		{
+			"titulo":"INTRODUCCION",
+			"parrafo":"Esta página (junto con los documentos que se mencionen en la misma) le informa sobre los términos y condiciones según los que suministramos cualquiera de los productos (los Productos) que aparecen en nuestro sitio web www.easycom.com (el Sitio). Lea estos términos y condiciones cuidadosamente antes de solicitar cualquier Producto del Sitio. Estos términos y condiciones no afectan a ninguno de sus derechos legales. Sin embargo, es importante que comprenda que al solicitar alguno de nuestros Productos del Sitio, acepta vincularse a estos términos y condiciones. Le recomendamos que imprima una copia de estos términos y condiciones para referencia futura."
+		},
+		{
+			"titulo":"1. INFORMACIÓN SOBRE NOSOTROS",
+			"parrafo":"www.easycom.com es un sitio propiedad de easycom plc, una compañía ecuatoriana registrada en Londres. La dirección comercial principal de este sitio web se encuentra en el domicilio social, en Hopton Park, Devizes, Wiltshire, SN10 2JP, y el número de IVA de easycom es 357 5588 08."
+		},
+		{
+			"titulo":"2. ACCESO AL SITIO",
+			"parrafo":"Para obtener información sobre las condiciones relativas a la utilización del sitio web (incluidos nuestros derechos de propiedad intelectual y de marca comercial) y nuestra política de privacidad, consulte www.easycom.com/policies Términos y condiciones de uso del sitio web."
+		},
+		{
+			"titulo":"3. CÓMO SE ESTABLECE EL CONTRATO ENTRE NOSOTROS",
+			"parrafo":"Se formará un contrato legalmente vinculante entre nosotros cuando: Nos haya confirmado que desea continuar con la compra de uno o más Productos, y Le hayamos confirmado que le venderemos el o los Productos."
+		},
+		{
+			"titulo":"4. PRECIO Y DISPONIBILIDAD",
+			"parrafo":"Cuando procesemos su pedido, recibirá un mensaje nuestro si el Producto que desea comprar ya no está disponible. Es posible que le ofrezcamos la oportunidad de comprar un Producto de características y valor equivalentes al que ha tratado de solicitar."
+		},
+		{
+			"titulo":"5. PAGO",
+			"parrafo":"easycom utilizar PayPal para proporcionar el máximo nivel de seguridad de los pagos procesados a través de esta tienda. PayPal garantiza su seguridad mediante el cifrado de la conexión durante la transmisión de datos bancarios en la red, y protegiendo sus datos financieros durante todo el proceso de pedido y pago."
+		},
+		{
+			"titulo":"6. ENTREGA",
+			"parrafo":"Solo podemos realizar entregas en los países que figuran en la dirección de envío de la página de pago. Póngase en contacto con easycom para ver qué otros medios alternativos existen para la entrega a otros países. Cuando reciba la confirmación del pedido, se le informará sobre una fecha aproximada de entrega del Producto."
+		},
+		{
+			"titulo":"7. CANCELACIÓN Y DEVOLUCIÓN",
+			"parrafo":"Puede cancelar o cambiar su pedido en cualquier momento antes o hasta 7 (siete) días después de la entrega del Producto. Si desea cancelar o cambiar su pedido, deberá darnos instrucciones claras por escrito de que desea hacerlo, ya sea por correo electrónico o escribiendo a la dirección indicada en el párrafo 3 anterior."
+		}
+	]
+}

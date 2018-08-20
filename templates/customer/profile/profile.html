@@ -28,40 +28,6 @@
       <a onclick="guardarPerfil()" class="btn btn-lg btn-primary" type="submit" data-loading-text="{% trans 'Saving...' %}">{% trans "Save" %}</a>
     </div>
 
-    <!--div class="modal fade" id="mostrarmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-                <button href="/login/" type="button" class="close" data-dismiss="modal" aria-label="close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-              {% csrf_token %}
-              <div class="form-group row">
-                <label class="col-sm-3" for="first_name">first name</label>
-                <input type="text" id="id" name="id" value="{{ usuario.id }}" style="display:none">
-                <input type="text" class="col-sm-8 form-control" id="nombre" name="nombre" value="{{ usuario.nombre }}" readonly>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3" for="servicio">Seccione un servicio</label>
-                <select class="col-sm-8 form-control" id="servicio" name="servicio">
-                </select>
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3" for="nombre">fecha registro</label>
-                <input type="date" class="col-sm-8 form-control" id="registro" name="registro" placeholder="ingrese registro">
-              </div>
-              <div class="form-group row">
-                <label class="col-sm-3" for="nombre">dirección</label>
-                <input type="text" class="col-sm-8 form-control" id="direccion" name="direccion" placeholder="ingrese su dirección">
-              </div>
-              <a type="submit" class="btn btn-primary" onclick="guardar()">Crear servicios</a>
-            </div>
-          </div>
-        </div>
-    </div-->
-
 {% endblock %}
 
 {% block scripts %}

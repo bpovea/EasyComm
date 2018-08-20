@@ -41,3 +41,12 @@ def faqs_load(request):
 
 def categories(request):
 	return render(request,'../templates/EasyComm/categories.html')
+
+def terms(request):
+	return render(request,'../templates/EasyComm/termsCond.html')
+
+def terms_load(request):
+	path_json = "static/data/terms/termsConds.json"
+	with open(path_json, 'r') as f:
+		array = json.load(f)
+		return JsonResponse(array)	

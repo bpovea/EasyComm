@@ -15,5 +15,5 @@ urlpatterns = [
 
     #API
 	url(r'^api/faqs/$', csrf_exempt(views.faqList)),
-	#url(r'^api/faqs/(?P<pk>[0-9]+)$', csrf_exempt(views.faqDetail))
+	url(r'^api/faqs/(?P<pk>[0-9]+)$', csrf_exempt(views.faqDetail))
 ]

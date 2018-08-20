@@ -12,7 +12,8 @@
 
     <svg id="graph" class="center-block border"></svg>
 
-    <table class="table table-striped table-bordered table-hover">
+    <!--table id="example" class="display table table-striped table-bordered table-hover"-->
+    <table id="example" class="display" style="width: 100%;">
         <tr>
             <th>{% trans "Email" %}</th>
             <th>{% trans "Name" %}</th>
@@ -51,8 +52,12 @@
 {% block reportscript %} 
     <script src="{% static 'oscar/js/jquery-3.2.1.min.js'  %}"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'EasyComm/reports/css/reports.css'  %}" >
-     <script src="{% static 'EasyComm/reports/graficador.js' %}"></script>
+    <script src="{% static 'EasyComm/reports/graficador.js' %}"></script>
     <script src="{% static 'EasyComm/reports/report_baskets.js' %}"></script>
+    <script src="{% static 'oscar/js/jquery-3.3.1.js' %}"></script>
+    <script src="{% static 'oscar/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'oscar/js/dataTablesAsign.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'oscar/css/jquery.dataTables.min.css' %}">
 {{ block.super }}
    
 {% endblock %}

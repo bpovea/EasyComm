@@ -4,18 +4,20 @@
 
 {% block styles %}
     {% if use_less %}
-        <link rel="stylesheet/less" type="text/css" href="{% static "oscar/less/styles.less" %}" />
+        <link rel="stylesheet/less" type="text/css" href="{% static 'oscar/less/styles.less' %}" />
     {% else %}
-        <link rel="stylesheet" type="text/css" href="{% static "oscar/css/styles.css" %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/styles.css' %}" />
     {% endif %}
-    <link rel="stylesheet" href="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" %}" />
-    <link rel="stylesheet" type="text/css" href="{% static "oscar/css/datetimepicker.css" %}" />
+    <link rel="stylesheet" href="{% static 'oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/datetimepicker.css' %}" />
 
     {# agregados #}
     <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/base.css'  %}" >
     <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/main.css'  %}" >
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/font-awesome.css'  %}" >
+
+
 
 {% endblock %}
 
@@ -84,11 +86,10 @@
     <!-- Twitter Bootstrap -->
     <script src="{% static 'oscar/js/bootstrap.min.js'  %}"></script>
     <!-- Oscar -->
-    <script src="{% static "oscar/js/oscar/ui.js" %}"></script>
+    <script src="{% static 'oscar/js/oscar/ui.js' %}"></script>
     
-    <script src="{% static "oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js" %}"></script>
-    <script src="{% static "oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js" %}"></script>
-
+    <script src="{% static 'oscar/js/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static 'oscar/js/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.all.js' %}"></script>
     
 {% endblock %}
 

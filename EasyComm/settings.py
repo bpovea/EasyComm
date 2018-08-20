@@ -200,13 +200,6 @@ OSCAR_ORDER_STATUS_PIPELINE = {
     'Being processed': ('Processed', 'Cancelled',),
     'Cancelled': (),
 }
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'stejorod'
-EMAIL_MAIN = 'noreply@stejorod.com'
-EMAIL_HOST_PASSWORD = '03deenero'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-OSCAR_FROM_EMAIL = 'noreply@easycomm.com'
 
 OSCAR_SHOP_NAME = 'EasyComm'
 OSCAR_SHOP_TAGLINE = ''
@@ -290,5 +283,13 @@ OSCAR_DASHBOARD_NAVIGATION += [
          ]
     },
 ]
+
+
+# import local-settings
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
 

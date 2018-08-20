@@ -1,0 +1,122 @@
+{% extends 'dashboard/layout.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block body_class %}{{ block.super }} reports{% endblock %}
+{% block title %}
+    {% trans "Reports" %} | {{ block.super }}
+{% endblock %}
+
+{% block breadcrumbs %}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{% url 'dashboard:index' %}">{% trans "Dashboard" %}</a>
+        </li>
+        <li class="active">{% trans "Faqs" %}</li>
+    </ul>
+{% endblock %}
+
+{% block headertext %}
+    {% trans "Faqs" %}
+{% endblock %}
+
+{% block dashboard_content %}
+    <div class="table-header">
+        <h3>{% trans "Listado de Faqs" %}</h3>
+        <button class="btn btn-primary create pull-right" data-toggle="modal" data-target="#newModal">Nuevo</button>
+    </div>
+    <div class="well">
+        {% if faqs %}
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>{% trans "N°" %}</th>
+                        <th>{% trans "Pregunta" %}</th>
+                        <th>{% trans "Estado" %}</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for faq in faqs %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ faq.question }}</td>
+                            <td>{{ faq.get_status_display }}</td>
+                            <td>
+                                <div class="btn-toolbar">
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary edit" pk="{{ faq.id }}" data-toggle="modal" data-target="#exampleModal"><i class="icon-edit"></i></button>
+                                        <button class="btn btn-danger del" pk="{{ faq.id }}"><i class="icon-trash"></i></button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>{% trans "No hay Faqs creados." %}</p>
+        {% endif %}
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Pregunta <span id="faq-id"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label>Pregunta:</label><input type="text" id="qst-detail"><br>
+                    <label>Respuesta:</label><textarea type="" id="rsp-detail" style="height:50px"></textarea><br>
+                    <label>Estado:</label><input type="checkbox" id="st-detail"><br>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="upd" id_faq="">Guardar Cambios</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="newModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="newModalLabel">Nueva pregunta <span id="faq-id"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label>Pregunta:</label><input type="text" id="qst-new"><br>
+                    <label>Respuesta:</label><textarea type="" id="rsp-new" style="height:50px"></textarea><br>
+                    <label>Estado:</label><input type="checkbox" id="st-new"><br>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" id="save" id_faq="">Guardar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="csrf_token">
+        {% csrf_token %}
+    </div>
+    
+
+{% endblock dashboard_content %}
+
+
+{% block extrascripts %}
+    {{ block.super }}
+    <script src="{% static "EasyComm/dashboard/help/faq.js" %}"></script>
+{% endblock %}

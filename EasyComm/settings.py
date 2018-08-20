@@ -208,3 +208,82 @@ OSCAR_SHOP_TAGLINE = ''
 
 OSCAR_DEFAULT_CURRENCY = 'DOLLAR'
 OSCAR_CURRENCY_FORMAT='DOLLAR'
+
+#default oscar navegation bar
+"""
+OSCAR_DASHBOARD_NAVIGATION = [
+    {
+        'icon': 'icon-th-list', 
+        'label': 'Dashboard', 
+        'url_name': 'dashboard:index'
+    },
+    {
+        'icon': 'icon-sitemap', 
+        'label': 'Catalogue', 
+        'children': [
+            {'label': 'Products', 'url_name': 'dashboard:catalogue-product-list'}, 
+            {'label': 'Product Types', 'url_name': 'dashboard:catalogue-class-list'}, 
+            {'label': 'Categories', 'url_name': 'dashboard:catalogue-category-list'}, 
+            {'label': 'Ranges', 'url_name': 'dashboard:range-list'}, 
+            {'label': 'Low stock alerts', 'url_name': 'dashboard:stock-alert-list'}
+        ]
+    }, 
+    {
+        'icon': 'icon-shopping-cart', 
+        'label': 'Fulfilment', 
+        'children': [
+            {'label': 'Orders', 'url_name': 'dashboard:order-list'}, 
+            {'label': 'Statistics', 'url_name': 'dashboard:order-stats'}, 
+            {'label': 'Partners', 'url_name': 'dashboard:partner-list'}
+        ]
+    }, 
+    {
+        'icon': 'icon-group', 
+        'label': 'Customers', 
+        'children': [
+            {'label': 'Customers', 'url_name': 'dashboard:users-index'}, 
+            {'label': 'Stock alert requests', 'url_name': 'dashboard:user-alert-list'}
+        ]
+    }, 
+    {
+        'icon': 'icon-bullhorn', 
+        'label': 'Offers', 
+        'children': [
+            {'label': 'Offers', 'url_name': 'dashboard:offer-list'}, 
+            {'label': 'Vouchers', 'url_name': 'dashboard:voucher-list'}, 
+            {'label': 'Voucher Sets', 'url_name': 'dashboard:voucher-set-list'}
+        ]
+    }, 
+    {
+        'icon': 'icon-folder-close', 
+        'label': 'Content', 
+        'children': [
+            {'label': 'Content blocks', 'url_name': 'dashboard:promotion-list'}, 
+            {'label': 'Content blocksby page', 'url_name': 'dashboard:promotion-list-by-page'}, 
+            {'label': 'Pages', 'url_name': 'dashboard:page-list'}, 
+            {'label': 'Email templates', 'url_name': 'dashboard:comms-list'}, 
+            {'label': 'Reviews', 'url_name': 'dashboard:reviews-list'}
+        ]
+    }, 
+    {
+        'icon': 'icon-bar-chart', 
+        'label': 'Reports', 'url_name': 'dashboard:reports-index'
+    }
+]
+"""
+
+OSCAR_DASHBOARD_NAVIGATION += [
+    {
+        'icon': 'icon-question',
+        'label': 'Help',
+        'children': [
+            {
+                'label': 'Faq',
+                'url_name': 'dashboard:faq-list',
+                'access_fn': lambda user, url_name, url_args, url_kwargs: user.is_staff,
+            },
+         ]
+    },
+]
+
+

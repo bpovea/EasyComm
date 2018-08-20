@@ -5,6 +5,8 @@ from django.template import RequestContext
 from django.views.generic import TemplateView
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse
+from rest_framework.response import Response
+from rest_framework import status
 
 from rest_framework.decorators import api_view
 
@@ -38,3 +40,28 @@ def faqList(request):
     else:
         return Response(
             serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@csrf_exempt
+@api_view(['GET', 'PUT', 'DELETE'])
+def faqDetail(request, pk):
+    try:
+        faq = Faq.objects.get(pk=pk)
+    except faq.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = FaqSerializer(faq)
+        return Response(serializer.data)
+
+    elif request.method == 'PUT':
+        serializer = FaqSerializer(faq, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        else:
+            return Response(
+                serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        faq.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

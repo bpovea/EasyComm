@@ -17,6 +17,7 @@
             <li class="nav-item"><a class="nav-link" href="{% url 'partners' %}">Socios</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'help:faq' %}">FAQs</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contacto</a></li>
+             <li class="nav-item"><a class="nav-link" href="{% url 'categories' %}">Categorias</a></li>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
             {% if user.is_authenticated %}
             {% block nav_account_navbar_authenticated %}

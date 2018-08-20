@@ -56,9 +56,6 @@ function editarPerfil(element){
     $('#formForUpdate').html(htmlFormForProfile);
     $('#formForUpdate').show();
 
-    // var crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-
-    
 }
 
 function reloadAfterUpdate(){
@@ -75,44 +72,41 @@ function guardarPerfil(){
         "email": $('#formEmail').val(),
     }
     console.log(info);
-
-    //var crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+    
+    var crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+    console.log(crf_token);
     $.ajax({
         url: "http://127.0.0.1:8000/api/profile/" + $('#userID').val()+"/",
         type:"PUT",    
         dataType : 'json',
-        //headers:{"X-CSRFToken": crf_token},
+        headers:{"X-CSRFToken": crf_token},
         data:info,
         success :reloadAfterUpdate,
         error : function(xhr, status) {
-            alert('Disculpe, existió un problema al guardar los datos del producto.');
+            alert('Disculpe, existió un problema al actualizar sus datos.');
         }
     });
 
     reloadAfterUpdate();
 }
 
-// function eliminarServicioDeUsuario(element){
-//     var crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
-//     info ={
-//         "servicio":$("#servicio").val(),
-//     }
-//     $.ajax({
-//         url: "/usuario_servicio/"+$("#id").val(),
-//         type:"DELETE",    
-//         dataType : 'json',
-//         headers:{"X-CSRFToken": crf_token},
-//         data:info,
-//         success :function(respuesta) {
-//             alert("Servicio asociado al usuario eliminado con éxito");
-//             $("#mostrarmodal").modal("hide");
-//             actualizarListaServicios();
-//         },
-//         error : function(xhr, status) {
-//             alert(xhr['responseJSON']);
-//         }
-//     });
-// }
+function eliminarPerfil(){
+    var crf_token = $('[name="csrfmiddlewaretoken"]').attr('value');
+     $.ajax({
+        url: "http://127.0.0.1:8000/api/profile/"+$("#userID").val()+"/",
+        type:"DELETE",    
+        dataType : 'json',
+        headers:{"X-CSRFToken": crf_token},
+        success :function(respuesta) {
+            window.location.replace("http://127.0.0.1:8000/home/");
+        },
+        error : function(xhr, status) {
+            alert('Disculpe, existió un problema al eliminar sus datos.');
+        }
+    });
+
+    reloadAfterUpdate();
+}
 
 $(document).ready(function(){
     

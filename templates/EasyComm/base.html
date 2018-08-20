@@ -15,10 +15,13 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'oscar/css/bootstrap.css'  %}" >
 	    <link rel="stylesheet" type="text/css" href="{% static 'oscar/css/font-awesome.css'  %}" >
     	<link rel="stylesheet" type="text/css" href="{% static 'oscar/css/base.css'  %}" >
-    	<link rel="stylesheet" type="text/css" href="{% static 'oscar/css/main.css'  %}" >
+		<link rel="stylesheet" type="text/css" href="{% static 'oscar/css/main.css'  %}" >
+		<link rel="stylesheet" type="text/css" href='{% static "EasyComm/help/faq.css" %}'/>
     	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
 
-    	{% block style %}{% endblock %}
+		{% block style %}{% endblock %}
+		
+		{% block extrastyles %}{% endblock %}
 	</head>
 
 	<body>

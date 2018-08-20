@@ -6,6 +6,8 @@ from oscar.core.application import (
     DashboardApplication as BaseDashboardApplication)
 from oscar.core.loading import get_class
 
+from EasyComm_apps.dashboard.help.app import application as help_app
+
 
 class DashboardApplication(BaseDashboardApplication):
     name = 'dashboard'
@@ -44,6 +46,7 @@ class DashboardApplication(BaseDashboardApplication):
             url(r'^vouchers/', self.vouchers_app.urls),
             url(r'^comms/', self.comms_app.urls),
             url(r'^shipping/', self.shipping_app.urls),
+            url(r'^help/', help_app.urls),
 
             url(r'^login/$',
                 auth_views.LoginView.as_view(template_name='dashboard/login.html',

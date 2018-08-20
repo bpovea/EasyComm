@@ -20,7 +20,7 @@ def contact_us(request):
         subject = "Nuevo Contacto"
         message = "Informacion de "+request.POST["nombre"]+" "+request.POST["apellido"]+"\n"+"Correo: "+request.POST["correo"]+" Pais: "+request.POST["pais"]+" Ciudad: "+request.POST["ciudad"]+"\n"+"Mensaje: "+request.POST["mensaje"]
         list_mail=["stejorod@espol.edu.ec"]
-        send_mail(subject,message,request.POST["correo"],list_mail,fail_silently=False)
+        send_mail(subject,message,"mdleiton@espol.edu.ec",list_mail,fail_silently=False)
     return render(request,'../templates/EasyComm/contact_us.html')
 
 def faqs(request):

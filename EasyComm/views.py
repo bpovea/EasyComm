@@ -37,3 +37,7 @@ def faqs_load(request):
 	with open(path_json, 'r') as f:
 		array = json.load(f)
 		return JsonResponse(array)
+
+
+def categories(request):
+	return render(request,'../templates/EasyComm/categories.html')

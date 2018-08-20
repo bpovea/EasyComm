@@ -26,14 +26,19 @@ class profile_details(APIView):
 
     def put(self, request, pk, format=None):
         user = self.get_object(pk)
+        print(user)
 
         user.first_name = request.POST['firstname']
         user.last_name = request.POST['lastname']
         user.email = request.POST['email']
-        user.save()
+        
+        print(user)
+        serializer = profile(user)
 
-        serializer = UsuarioSerializer(usuario)
-        return Response(serializer.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
         user = self.get_object(pk)

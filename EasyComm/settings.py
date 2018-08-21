@@ -285,19 +285,9 @@ OSCAR_DASHBOARD_NAVIGATION += [
 ]
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 40e2478acba0465612cbeede9347e4e9452551a0
 # import local-settings
 
 try:
     from .local_settings import *
 except ImportError:
-<<<<<<< HEAD
-pass
-=======
     pass
-
->>>>>>> 40e2478acba0465612cbeede9347e4e9452551a0
-

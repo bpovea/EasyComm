@@ -12,7 +12,6 @@ django-tables2==1.21.2
 django-treebeard==4.3
 django-widget-tweaks==1.4.2
 djangorestframework==3.8.2
-djangotoolbox==1.8.0
 factory-boy==2.11.1
 Faker==0.8.17
 mock==2.0.0
@@ -32,7 +31,6 @@ text-unidecode==1.2
 Unidecode==1.0.22
 requests==2.19.1
 django-cors-headers==2.4.0
-
 dataclasses==0.6
 django-filter==2.0.0
 djongo==1.2.29

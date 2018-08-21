@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     "EasyCommAPI",
     'django_seed',
     'corsheaders',
-    'reportesMongo',
+    #'reportesMongo',
 ] + get_core_apps([
     'EasyComm_apps.order',
     'EasyComm_apps.address',
@@ -204,8 +204,8 @@ OSCAR_ORDER_STATUS_PIPELINE = {
 OSCAR_SHOP_NAME = 'EasyComm'
 OSCAR_SHOP_TAGLINE = ''
 
-OSCAR_DEFAULT_CURRENCY = 'DOLLAR'
-OSCAR_CURRENCY_FORMAT='DOLLAR'
+OSCAR_DEFAULT_CURRENCY = '$'
+OSCAR_CURRENCY_FORMAT='$'
 
 #default oscar navegation bar
 """

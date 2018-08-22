@@ -4,6 +4,7 @@ from rest_framework.views import APIView
 from datetime import datetime
 from django.db.models import Sum
 from django.http import JsonResponse
+from reportesMongo.models import *
 
 ReportForm = get_class('dashboard.reports.forms', 'ReportForm')
 GeneratorRepository = get_class('dashboard.reports.utils',
@@ -14,6 +15,34 @@ Order = get_model('order', 'Order')
 Order_line = get_model('order', 'Line')
 Basket = get_model('basket', 'Basket')
 Basket_line = get_model('basket', 'Line')
+Product = get_model('catalogue', 'product')
+
+class report_productsNoSQL(APIView):
+
+	def get(self, request, format=None):
+		reports = UserReport.objects.all()
+		products = {} 
+		for usuario in reports:
+			for orden in usuario.ordenes:
+				for linea in orden.detalle:
+					product = Product.objects.get(pk=linea.productID)
+					if product.title in products:
+						products[product.title] = products[product.title] + linea.cantidad
+					else:
+						products[product.title] = linea.cantidad
+		return JsonResponse({'productos':products},safe=False)
+
+class report_userNoSQL(APIView):
+
+	def get(self, request, format=None):
+		reports = UserReport.objects.all()
+		usuarios = {} 
+		for usuario in reports:
+			total = 0.0
+			for orden in usuario.ordenes:
+				total  = total +orden.total 
+			usuarios[usuario.full_name] = total
+		return JsonResponse({'usuarios':usuarios},safe=False)
 
 class report_products(APIView):
 
@@ -79,3 +108,8 @@ class report_baskets_open(APIView):
 		return JsonResponse(response,safe=False)
 	
 		
+
+
+
+
+

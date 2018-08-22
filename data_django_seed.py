@@ -40,7 +40,10 @@ def acortar_nombres():
 	for product_clas in product_class.objects.all():
 		product_clas.name = product_clas.name[:15]
 		product_clas.save()
-
+	for faq in models.Faq.objects.all():
+		faq.question=faq.question[0:20]
+		faq.answer= faq.answer[0:100]
+		faq.save()
 def cambiar_lineas_carrito():
 	users = User.objects.all()
 	for basket in Basket.objects.all():
@@ -94,4 +97,35 @@ id_images = [1,2,3,4,5]
 #cambiar_contrasenas()
 
 #agregar_carritos_usuarios()
-cambiar_lineas_carrito()
+#cambiar_lineas_carrito()
+
+
+from reportesMongo.models import *
+
+Order = get_model('order', 'Order')
+Order_line = get_model('order', 'Line')
+
+
+def corregirErroresDjangoSeed():
+	for stock in partner_stock.objects.all():
+		stock.num_allocated = 10
+		stock.price_currency = random.randint(0,100)
+		stock.cost_price = 10
+		stock.num_in_stock = 1000
+		stock.low_stock_threshold = 1
+		stock.save()
+
+def duplicarorder():
+	ordenes = Order.objects.all()
+
+	for orden in ordenes:
+		listadetalles = []
+		for orden_line in Order_line.objects.filter(order=orden):
+			detalle = OrdenDetalle(productID=orden_line.product.id,cantidad=orden_line.quantity)
+		listadetalles.append(detalle)
+		ors = Orden(codigo=str(orden.id),fecha=orden.date_placed,total=orden.total_incl_tax,detalle=listadetalles)
+		user = UserReport(userID=orden.user.id,full_name=str(orden.user.first_name) + " " + str(orden.user.last_name),ordenes=[ors]).save()
+
+#corregirErroresDjangoSeed()
+
+duplicarorder()

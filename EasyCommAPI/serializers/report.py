@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from oscar.core.loading import get_model
 from .product import *
+from reportesMongo.models import *
 
 ProductRecord = get_model('analytics', 'ProductRecord')
 Order = get_model('order', 'Order')
@@ -31,4 +32,11 @@ class report_order(serializers.ModelSerializer):
 	lines = order_line(many=True)
 	class Meta:
 		model = Order
+		fields = "__all__"
+
+
+
+class report_orderNoSQLSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = UserReport
 		fields = "__all__"

@@ -46,6 +46,7 @@ logger = logging.getLogger('oscar.checkout')
 
 
 from EasyComm_apps.order.models import Order
+from reportesMongo.models import *
 
 class PaymentDetailsView(CorePaymentDetailsView):
 
@@ -165,30 +166,21 @@ class PaymentDetailsView(CorePaymentDetailsView):
                 shipping_charge, billing_address, order_total, **order_kwargs)
 
             # TODO : create ORDER - no relational #
-            print("#######################  HERE  ######################")
-            #get the order
+            
             order = Order.objects.get(number=order_number)
-            print(order)
-            #get user
-            user = str(order.user.first_name) + " " + str(order.user.last_name)
-            print(user)
             #get carrito
             basket = order.basket
-            print(basket)
             #get array de lineas del carrito
             basket_lines = order.basket.lines.all()
-            for i in basket_lines:
-                print(i)
-            #get total de la Orden con impuestos
-            order_total = order.total_incl_tax
-            print(order_total)
-            #get estado de la Orden
-            order_status = order.status
-            print(order_status)
+            listadetalles = []
+            for lines in basket_lines:
+                detalle = OrdenDetalle(productID=lines.product.id,cantidad=lines.quantity)
+                listadetalles.append(detalle)
+            #get the order sqldb
+            ors = Orden(codigo=str(order.id),fecha=order.date_placed,total=order.total_incl_tax,detalle=listadetalles)
+            user = UserReport(userID=order.user.id,full_name=str(order.user.first_name) + " " + str(order.user.last_name),ordenes=[ors]).save()
 
-            print("###### reporte ######")
-
-            reportes = ReporteDeCompras.objects.all()
+            #reportes = ReporteDeCompras.objects.all()
 
             return resp
             

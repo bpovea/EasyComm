@@ -18,6 +18,8 @@ class MyRESTApiApplication(RESTApiApplication):
         	url(r'^report-products/$',views.report_products.as_view(), name='report-products'),
             url(r'^report-orders/$',views.report_orders.as_view(), name='report-orders'),
             url(r'^report-baskets-open/$',views.report_baskets_open.as_view(), name='report-baskets-open'),
+            url(r'^report-ordes-noSQL/$',views.report_productsNoSQL.as_view(), name='report-report-orderNoSQL'),
+            url(r'^report-users-noSQL/$',views.report_userNoSQL.as_view(), name='report-users-orderNoSQL'),
         ]
 
         return urls + super(MyRESTApiApplication, self).get_urls()

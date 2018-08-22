@@ -38,7 +38,10 @@ def PROTECTED_APIS(r, f):
 
         ('report-products', reverse('report-products', request=r, format=f)),
         ('report-orders', reverse('report-orders', request=r, format=f)),
+        ('report-report-orderNoSQL', reverse('report-report-orderNoSQL', request=r, format=f)),
+        ('report-users-orderNoSQL', reverse('report-users-orderNoSQL', request=r, format=f)),
         ('report-baskets-open', reverse('report-baskets-open', request=r, format=f)),
+        
     ]
 
 @api_view(('GET',))

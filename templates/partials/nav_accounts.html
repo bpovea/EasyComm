@@ -17,7 +17,9 @@
             <li class="nav-item"><a class="nav-link" href="{% url 'partners' %}">Socios</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'help:faq' %}">FAQs</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'contact_us' %}">Contacto</a></li>
+            {% if user.is_staff or perms.partner.dashboard_access %}
              <li class="nav-item"><a class="nav-link" href="{% url 'categories' %}">Categorias</a></li>
+            {% endif %}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
             {% if user.is_authenticated %}
             {% block nav_account_navbar_authenticated %}

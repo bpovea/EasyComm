@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     "EasyCommAPI",
     'django_seed',
     'corsheaders',
-    #'reportesMongo',
+    'reportesMongo',
 ] + get_core_apps([
     'EasyComm_apps.order',
     'EasyComm_apps.address',

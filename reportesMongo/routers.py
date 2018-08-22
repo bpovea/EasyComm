@@ -27,7 +27,7 @@ class ReportesRouter(object):
             obj2._meta.app_label == 'reportesMongo':
             return True
         return None
-
+        
     def allow_migrate(self, db, app_label, model_name=None, **hints):
         """
         Make sure the reportesMongo app only appears in the 'mongo_db'

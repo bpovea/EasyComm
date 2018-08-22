@@ -11,3 +11,6 @@ python manage.py migrate --run-syncdb
 
 con django-seed
 python data_django_seed.py
+
+#para crear la base "proyectoDAW" y la tabla reportesMongo_reportedecompras 
+python manage.py migrate reportesMongo --database mongo_db

@@ -2,6 +2,7 @@ from oscar.apps.checkout.views import PaymentDetailsView as CorePaymentDetailsVi
 
 import logging
 
+from reportesMongo import *
 from django import http
 from django.contrib import messages
 from django.contrib.auth import login
@@ -184,6 +185,10 @@ class PaymentDetailsView(CorePaymentDetailsView):
             #get estado de la Orden
             order_status = order.status
             print(order_status)
+
+            print("###### reporte ######")
+
+            reportes = ReporteDeCompras.objects.all()
 
             return resp
             
